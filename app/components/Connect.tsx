@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const actions = [
   {
     title: "Prayer Request",
@@ -25,27 +27,29 @@ const actions = [
 export default function Connect() {
   return (
     <section id="connect" className="action-section">
-      <div className="reveal" style={{ textAlign: "center", marginBottom: 0 }}>
+      <Reveal style={{ textAlign: "center", marginBottom: 0 }}>
         <span className="section-label" style={{ textAlign: "center", display: "block" }}>
           Get Involved
         </span>
         <h2 className="section-title" style={{ textAlign: "center" }}>
           Take Your Next Step
         </h2>
-      </div>
+      </Reveal>
       <div className="action-grid">
         {actions.map((a, i) => (
-          <div key={a.title} className={`action-card reveal ${i > 0 ? `delay-${i}` : ""}`}>
-            <h3 className="action-title">{a.title}</h3>
-            <p className="action-text">{a.text}</p>
-            {a.href ? (
-              <a href={a.href} target="_blank" rel="noopener noreferrer" className="action-btn">
-                {a.cta}
-              </a>
-            ) : (
-              <button className="action-btn">{a.cta}</button>
-            )}
-          </div>
+          <Reveal key={a.title} delay={i * 0.1}>
+            <div className="action-card">
+              <h3 className="action-title">{a.title}</h3>
+              <p className="action-text">{a.text}</p>
+              {a.href ? (
+                <a href={a.href} target="_blank" rel="noopener noreferrer" className="action-btn">
+                  {a.cta}
+                </a>
+              ) : (
+                <button className="action-btn">{a.cta}</button>
+              )}
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>

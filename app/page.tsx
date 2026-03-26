@@ -9,7 +9,7 @@ import Pillars from "./components/Pillars";
 import Connect from "./components/Connect";
 import CTABanner from "./components/CTABanner";
 import Footer from "./components/Footer";
-import ScrollReveal from "./components/ScrollReveal";
+
 import ProgressBar from "./components/ProgressBar";
 import CustomCursor from "./components/CustomCursor";
 
@@ -18,7 +18,6 @@ export default function Home() {
     <>
       <ProgressBar />
       <CustomCursor />
-      <ScrollReveal />
       <Navbar />
       <Hero />
       <ServiceStrip />

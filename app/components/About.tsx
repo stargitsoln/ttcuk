@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const features = [
   {
     num: "01",
@@ -29,32 +31,31 @@ export default function About() {
   return (
     <>
       <section id="about" className="section" style={{ background: "var(--dark)", paddingBottom: 0 }}>
-        <div className="reveal" style={{ textAlign: "center" }}>
+        <Reveal style={{ textAlign: "center" }}>
           <span className="section-label" style={{ textAlign: "center", display: "block" }}>Why Join Us</span>
           <h2 className="section-title" style={{ textAlign: "center" }}>
             Experience faith<br />
             <em>like never before</em>
           </h2>
-        </div>
+        </Reveal>
       </section>
 
       <div className="card-grid">
         {features.map((f, i) => (
-          <div
-            key={f.num}
-            className={`feature-card reveal ${i > 0 ? `delay-${i}` : ""}`}
-            style={{ "--card-bg": `url(${f.img})` } as React.CSSProperties}
-          >
-            {/* Hover background image */}
-            <div className="card-bg-image" />
-            <div className="card-bg-overlay" />
-
-            <div className="card-number">{f.num}</div>
-            <h3 className="card-title">{f.title}</h3>
-            <p className="card-text">{f.text}</p>
-            <span className="card-arrow">Explore →</span>
-            <div className="card-line" />
-          </div>
+          <Reveal key={f.num} delay={i * 0.1}>
+            <div
+              className="feature-card"
+              style={{ "--card-bg": `url(${f.img})` } as React.CSSProperties}
+            >
+              <div className="card-bg-image" />
+              <div className="card-bg-overlay" />
+              <div className="card-number">{f.num}</div>
+              <h3 className="card-title">{f.title}</h3>
+              <p className="card-text">{f.text}</p>
+              <span className="card-arrow">Explore →</span>
+              <div className="card-line" />
+            </div>
+          </Reveal>
         ))}
       </div>
     </>

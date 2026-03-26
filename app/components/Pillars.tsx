@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const beliefs = [
   {
     num: "I",
@@ -35,18 +37,20 @@ export default function Pillars() {
         <source src="/images/TTCUK-logo.mp4" type="video/mp4" />
       </video>
       <div className="section-bg-overlay" />
-      <div className="reveal" style={{ position: "relative", zIndex: 1 }}>
+      <Reveal style={{ position: "relative", zIndex: 1 }}>
         <span className="section-label">Foundation</span>
         <h2 className="section-title">Our Beliefs</h2>
-      </div>
-      {beliefs.map((b) => (
-        <div key={b.num} className="belief-item reveal" style={{ position: "relative", zIndex: 1 }}>
-          <div className="belief-num">{b.num}</div>
-          <div>
-            <div className="belief-verse">{b.verse}</div>
-            <p className="belief-text">{b.text}</p>
+      </Reveal>
+      {beliefs.map((b, i) => (
+        <Reveal key={b.num} delay={i * 0.1} style={{ position: "relative", zIndex: 1 }}>
+          <div className="belief-item">
+            <div className="belief-num">{b.num}</div>
+            <div>
+              <div className="belief-verse">{b.verse}</div>
+              <p className="belief-text">{b.text}</p>
+            </div>
           </div>
-        </div>
+        </Reveal>
       ))}
     </section>
   );

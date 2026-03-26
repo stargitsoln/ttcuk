@@ -1,20 +1,21 @@
 import Image from "next/image";
+import Reveal from "./Reveal";
 
 export default function Services() {
   return (
     <div id="services" className="times-block">
-      <div className="reveal">
+      <Reveal>
         <span className="section-label" style={{ textAlign: "center", display: "block" }}>
           Gather With Us
         </span>
         <h2 className="section-title" style={{ textAlign: "center" }}>
           Every Sunday
         </h2>
-      </div>
+      </Reveal>
 
       <div className="service-layout">
         {/* Image side */}
-        <div className="service-image reveal">
+        <Reveal direction="left" className="service-image">
           <Image
             src="/images/pst-gene.jpg"
             alt="Sunday service at The Transforming Church UK"
@@ -22,21 +23,23 @@ export default function Services() {
             style={{ objectFit: "cover", objectPosition: "center" }}
           />
           <div className="service-image-overlay" />
-        </div>
+        </Reveal>
 
         {/* Info side */}
         <div className="service-info">
-          <div className="times-ring reveal">
-            <div className="orbit-dot" />
-            <div className="orbit-dot" />
-            <div className="orbit-dot" />
-            <div className="times-inner">
-              <span className="big">11AM</span>
-              <span className="small" style={{ marginTop: 4 }}>to 1PM</span>
+          <Reveal delay={0.2}>
+            <div className="times-ring">
+              <div className="orbit-dot" />
+              <div className="orbit-dot" />
+              <div className="orbit-dot" />
+              <div className="times-inner">
+                <span className="big">11AM</span>
+                <span className="small" style={{ marginTop: 4 }}>to 1PM</span>
+              </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="reveal" style={{ maxWidth: 340 }}>
+          <Reveal delay={0.35} style={{ maxWidth: 340 }}>
             <p
               style={{
                 fontFamily: "var(--font-display), serif",
@@ -57,7 +60,7 @@ export default function Services() {
             <p style={{ fontSize: 12, color: "var(--gold)", letterSpacing: 2, marginTop: 16 }}>
               Family-Friendly ✦ All Welcome
             </p>
-          </div>
+          </Reveal>
         </div>
       </div>
     </div>

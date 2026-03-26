@@ -53,6 +53,7 @@ export default function Hero() {
           src={slide.src}
           alt={slide.alt}
           fill
+          sizes="100vw"
           className="hero-bg-img"
           priority={i === 0}
           style={{

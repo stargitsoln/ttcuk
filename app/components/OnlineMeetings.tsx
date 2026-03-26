@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const meetings = [
   {
     time: "Wednesday · 8PM GMT",
@@ -19,25 +21,27 @@ const meetings = [
 export default function OnlineMeetings() {
   return (
     <section className="section" style={{ background: "var(--mid)" }} id="online">
-      <div className="reveal" style={{ textAlign: "center" }}>
+      <Reveal style={{ textAlign: "center" }}>
         <span className="section-label" style={{ textAlign: "center", display: "block" }}>Online Meetings</span>
         <h2 className="section-title" style={{ textAlign: "center" }}>Join From Anywhere</h2>
-      </div>
+      </Reveal>
       <div className="meetings-grid">
         {meetings.map((m, i) => (
-          <div key={m.name} className={`meeting-card reveal ${i > 0 ? `delay-${i}` : ""}`}>
-            <span className="meeting-time">{m.time}</span>
-            <div className="meeting-name">{m.name}</div>
-            <p className="meeting-desc">{m.desc}</p>
-            <a
-              href="https://bit.ly/joinTTCUK"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="meeting-link"
-            >
-              Join →
-            </a>
-          </div>
+          <Reveal key={m.name} delay={i * 0.12}>
+            <div className="meeting-card">
+              <span className="meeting-time">{m.time}</span>
+              <div className="meeting-name">{m.name}</div>
+              <p className="meeting-desc">{m.desc}</p>
+              <a
+                href="https://bit.ly/joinTTCUK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="meeting-link"
+              >
+                Join →
+              </a>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>

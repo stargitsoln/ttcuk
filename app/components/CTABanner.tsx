@@ -1,8 +1,10 @@
+import Reveal from "./Reveal";
+
 export default function CTABanner() {
   return (
     <div className="final-cta">
       <div className="ghost-word">TRANSFORM</div>
-      <div className="reveal">
+      <Reveal>
         <span className="section-label" style={{ display: "block", marginBottom: 16 }}>
           Be Part of Something Bigger
         </span>
@@ -25,7 +27,7 @@ export default function CTABanner() {
             Watch Live
           </a>
         </div>
-      </div>
+      </Reveal>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 import { useRef } from "react";
+import Reveal from "./Reveal";
 
 const sermons = [
   {
@@ -71,7 +72,7 @@ export default function ServiceStrip() {
         playsInline
       />
       <div className="section-bg-overlay" />
-      <div className="reveal" style={{ textAlign: "center", marginBottom: 48, padding: "0 64px", position: "relative", zIndex: 1 }}>
+      <Reveal style={{ textAlign: "center", marginBottom: 48, padding: "0 64px", position: "relative", zIndex: 1 }}>
         <span className="section-label" style={{ textAlign: "center", display: "block" }}>
           Watch &amp; Listen
         </span>
@@ -81,7 +82,7 @@ export default function ServiceStrip() {
         <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", maxWidth: 480, margin: "0 auto", lineHeight: 1.7 }}>
           Powerful messages from TTCUKOnline — watch on YouTube
         </p>
-      </div>
+      </Reveal>
 
       <div className="sermons-carousel-wrap" style={{ position: "relative", zIndex: 1 }}>
         <button className="sermons-nav prev" onClick={() => scroll("left")} aria-label="Previous">‹</button>
@@ -120,7 +121,7 @@ export default function ServiceStrip() {
         <button className="sermons-nav next" onClick={() => scroll("right")} aria-label="Next">›</button>
       </div>
 
-      <div style={{ textAlign: "center", marginTop: 48, padding: "0 64px", position: "relative", zIndex: 1 }} className="reveal">
+      <Reveal style={{ textAlign: "center", marginTop: 48, padding: "0 64px", position: "relative", zIndex: 1 }}>
         <a
           href="https://www.youtube.com/@TTCUKOnline"
           target="_blank"
@@ -129,7 +130,7 @@ export default function ServiceStrip() {
         >
           View All on YouTube
         </a>
-      </div>
+      </Reveal>
     </section>
   );
 }
