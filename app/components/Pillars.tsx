@@ -25,7 +25,7 @@ export default function Pillars() {
   return (
     <section id="beliefs" className="beliefs-section">
       <video
-        className="section-bg-video beliefs-bg-video"
+        className="section-bg-video"
         src="/images/TTCUK-logo.mp4"
         autoPlay
         loop
