@@ -3,22 +3,46 @@ import { useState, useEffect } from "react";
 import ParticleCanvas from "./ParticleCanvas";
 import Image from "next/image";
 
-const slides = [
+const desktopSlides = [
   { src: "/images/revsam2.jpg", alt: "Pastor Sam at TTCUK" },
   { src: "/images/baptism.jpg", alt: "Baptism at TTCUK" },
   { src: "/images/rev_sam.jpg", alt: "Rev Sam ministering" },
   { src: "/images/congregation7.jpg", alt: "TTCUK congregation" },
 ];
 
+const mobileSlides = [
+  { src: "/images/congre.jpg", alt: "The Transforming Church UK congregation" },
+  { src: "/images/baptism.jpg", alt: "Baptism at TTCUK" },
+  { src: "/images/pastor-yinka.jpg", alt: "Pastor Yinka at TTCUK" },
+];
+
 export default function Hero() {
   const [current, setCurrent] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => {
+      setIsMobile(e.matches);
+      setCurrent(0);
+    };
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  const slides = isMobile ? mobileSlides : desktopSlides;
+
+  useEffect(() => {
+    setCurrent(0);
+  }, [isMobile]);
 
   useEffect(() => {
     const t = setInterval(() => {
       setCurrent((c) => (c + 1) % slides.length);
     }, 6000);
     return () => clearInterval(t);
-  }, []);
+  }, [slides.length]);
 
   return (
     <section className="hero">

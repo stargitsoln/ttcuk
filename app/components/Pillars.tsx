@@ -25,13 +25,12 @@ export default function Pillars() {
   return (
     <section id="beliefs" className="beliefs-section">
       <video
-        className="section-bg-video"
+        className="section-bg-video beliefs-bg-video"
         src="/images/TTCUK-logo.mp4"
         autoPlay
         loop
         muted
         playsInline
-        style={{ width: "40%", left: "auto", right: 0, opacity: 0.15 }}
       />
       <div className="section-bg-overlay" />
       <div className="reveal" style={{ position: "relative", zIndex: 1 }}>
