@@ -16,7 +16,7 @@ export default function Services() {
         {/* Image side */}
         <div className="service-image reveal">
           <Image
-            src="/images/Church having fun.jpg"
+            src="/images/pst-gene.jpg"
             alt="Sunday service at The Transforming Church UK"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}

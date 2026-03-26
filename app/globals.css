@@ -346,36 +346,55 @@
     background: var(--mid); cursor: pointer;
     transition: background 0.4s;
   }
-  .feature-card::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(201,168,76,0.08), transparent);
-    opacity: 0; transition: opacity 0.4s;
+  /* Hover background image */
+  .card-bg-image {
+    position: absolute; inset: 0;
+    background-image: var(--card-bg);
+    background-size: cover; background-position: center;
+    opacity: 0; transition: opacity 0.6s ease;
+    z-index: 0;
   }
-  .feature-card:hover::before { opacity: 1; }
-  .feature-card:hover { background: #1E1A15; }
+  .card-bg-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(10,8,6,0.75) 0%, rgba(10,8,6,0.35) 60%, rgba(10,8,6,0.2) 100%);
+    opacity: 0; transition: opacity 0.6s ease;
+    z-index: 1;
+  }
+  .feature-card:hover .card-bg-image { opacity: 1; }
+  .feature-card:hover .card-bg-overlay { opacity: 1; }
+  /* Keep content above image */
+  .card-number, .card-title, .card-text, .card-arrow, .card-line {
+    position: relative; z-index: 2;
+  }
   .card-number {
     font-family: var(--font-display), serif;
     font-size: 56px; font-weight: 300;
     color: rgba(201,168,76,0.12); line-height: 1; margin-bottom: 20px;
     transition: color 0.4s;
   }
-  .feature-card:hover .card-number { color: rgba(201,168,76,0.3); }
+  .feature-card:hover .card-number { color: rgba(201,168,76,0.6); }
   .card-title {
     font-family: var(--font-display), serif;
     font-size: 22px; font-weight: 400;
     margin-bottom: 12px; color: var(--white);
+    transition: text-shadow 0.4s;
   }
+  .feature-card:hover .card-title { text-shadow: 0 2px 16px rgba(0,0,0,0.8); }
   .card-text {
     font-size: 13px; font-weight: 300;
     color: rgba(255,255,255,0.5); line-height: 1.8;
+    transition: opacity 0.3s, max-height 0.4s, margin 0.3s;
+    max-height: 120px; overflow: hidden;
   }
+  .feature-card:hover .card-text { opacity: 0; max-height: 0; margin: 0; }
   .card-arrow {
     display: inline-block; margin-top: 24px;
     font-size: 11px; letter-spacing: 3px;
     color: var(--gold); text-transform: uppercase;
-    transition: transform 0.3s;
+    transition: transform 0.3s, color 0.3s, opacity 0.3s;
+    opacity: 0;
   }
-  .feature-card:hover .card-arrow { transform: translateX(10px); }
+  .feature-card:hover .card-arrow { transform: translateX(10px); color: var(--gold-light); opacity: 1; }
   .card-line {
     position: absolute; bottom: 0; left: 0; height: 2px; width: 0;
     background: linear-gradient(to right, var(--gold), var(--gold-light));
@@ -386,7 +405,7 @@
   /* ─── SERVICE TIMES ─── */
   .times-block {
     padding: 100px 64px;
-    background: linear-gradient(180deg, var(--dark) 0%, #150F05 100%);
+    background: var(--dark);
     text-align: center;
   }
   .times-ring {

@@ -3,21 +3,25 @@ const features = [
     num: "01",
     title: "Dynamic Worship",
     text: "Feel the presence of God in an atmosphere of passionate praise and deep worship that moves the soul.",
+    img: "/images/choir-ministration.jpg",
   },
   {
     num: "02",
     title: "Powerful Teachings",
     text: "Biblical, life-changing messages rooted in Kingdom values that will equip you to thrive in every season.",
+    img: "/images/pastor-yinka.jpg",
   },
   {
     num: "03",
     title: "Loving Community",
     text: "Build meaningful, lasting relationships in a church that truly cares about YOU and your journey.",
+    img: "/images/church-having-fun.jpg",
   },
   {
     num: "04",
     title: "Prayers & Miracles",
     text: "Experience divine breakthroughs through our prophetic prayers and powerful intercessions.",
+    img: "/images/revsam2.jpg",
   },
 ];
 
@@ -39,7 +43,12 @@ export default function About() {
           <div
             key={f.num}
             className={`feature-card reveal ${i > 0 ? `delay-${i}` : ""}`}
+            style={{ "--card-bg": `url(${f.img})` } as React.CSSProperties}
           >
+            {/* Hover background image */}
+            <div className="card-bg-image" />
+            <div className="card-bg-overlay" />
+
             <div className="card-number">{f.num}</div>
             <h3 className="card-title">{f.title}</h3>
             <p className="card-text">{f.text}</p>
