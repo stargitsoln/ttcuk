@@ -4,16 +4,20 @@ import ServiceStrip from "./components/ServiceStrip";
 import About from "./components/About";
 import Services from "./components/Services";
 import OnlineMeetings from "./components/OnlineMeetings";
-import Sermons from "./components/Sermons";
+import Quote from "./components/Quote";
 import Pillars from "./components/Pillars";
 import Connect from "./components/Connect";
 import CTABanner from "./components/CTABanner";
 import Footer from "./components/Footer";
 import ScrollReveal from "./components/ScrollReveal";
+import ProgressBar from "./components/ProgressBar";
+import CustomCursor from "./components/CustomCursor";
 
 export default function Home() {
   return (
     <>
+      <ProgressBar />
+      <CustomCursor />
       <ScrollReveal />
       <Navbar />
       <Hero />
@@ -21,7 +25,7 @@ export default function Home() {
       <About />
       <Services />
       <OnlineMeetings />
-      <Sermons />
+      <Quote />
       <Pillars />
       <Connect />
       <CTABanner />
