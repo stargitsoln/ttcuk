@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useState, useEffect, useCallback } from "react";
 import Reveal from "./Reveal";
+import BgVideo from "./BgVideo";
 
 const sermons = [
   {
@@ -135,14 +136,7 @@ export default function ServiceStrip() {
 
   return (
     <section className="sermons-section" id="sermons">
-      <video
-        className="section-bg-video"
-        src="/images/TTCUK-logo.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+      <BgVideo src="/images/TTCUK-logo.mp4" className="section-bg-video" />
       <div className="section-bg-overlay" />
       <Reveal style={{ textAlign: "center", marginBottom: 48, padding: "0 64px", position: "relative", zIndex: 1 }}>
         <span className="section-label" style={{ textAlign: "center", display: "block" }}>

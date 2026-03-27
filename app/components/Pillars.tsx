@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import BgVideo from "./BgVideo";
 
 const beliefs = [
   {
@@ -26,16 +27,7 @@ const beliefs = [
 export default function Pillars() {
   return (
     <section id="beliefs" className="beliefs-section">
-      <video
-        className="section-bg-video"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-      >
-        <source src="/images/TTCUK-logo.mp4" type="video/mp4" />
-      </video>
+      <BgVideo src="/images/TTCUK-logo.mp4" className="section-bg-video" />
       <div className="section-bg-overlay" />
       <Reveal style={{ position: "relative", zIndex: 1 }}>
         <span className="section-label">Foundation</span>

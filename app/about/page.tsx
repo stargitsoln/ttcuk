@@ -3,6 +3,7 @@ import Link from "next/link";
 import Reveal from "../components/Reveal";
 import Footer from "../components/Footer";
 import Chatbot from "../components/Chatbot";
+import BgVideo from "../components/BgVideo";
 
 const values = [
   {
@@ -208,16 +209,7 @@ export default function AboutPage() {
 
         {/* Our Beliefs */}
         <section className="about-beliefs" id="beliefs">
-          <video
-            className="section-bg-video"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-          >
-            <source src="/images/TTCUK-logo.mp4" type="video/mp4" />
-          </video>
+          <BgVideo src="/images/TTCUK-logo.mp4" className="section-bg-video" />
           <div className="section-bg-overlay" />
           <Reveal style={{ textAlign: "center", marginBottom: 48, position: "relative", zIndex: 1 }}>
             <span className="section-label" style={{ display: "block", textAlign: "center" }}>
