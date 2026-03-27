@@ -153,41 +153,37 @@ export default function AboutPage() {
 
         {/* Our Mission */}
         <section className="about-mission">
-          <div className="about-mission-grid">
-            <div className="about-mission-content">
-              <Reveal>
-                <span className="section-label" style={{ display: "block" }}>
-                  Our Mission
-                </span>
-                <h2 className="section-title">
-                  Leading people into a<br />
-                  <em>life-transforming relationship</em>
-                </h2>
-              </Reveal>
-              <Reveal delay={0.15}>
-                <div className="about-mission-body">
-                  <p>
-                    We exist to lead people into a life-transforming relationship with Jesus Christ.
-                    Our mission is underpinned by our commitment to community participation and engagement.
-                  </p>
-                  <p>
-                    We will play an active role in supporting community initiatives that promote harmony
-                    and development of local communities. We are a church committed to expressing the love
-                    of Christ towards those in need, providing support to the vulnerable and oppressed in
-                    the local community.
-                  </p>
-                </div>
-              </Reveal>
+          <Reveal>
+            <span className="section-label" style={{ display: "block" }}>
+              Our Mission
+            </span>
+            <h2 className="section-title">
+              Leading people into a<br />
+              <em>life-transforming relationship</em>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div className="about-mission-body">
+              <p>
+                We exist to lead people into a life-transforming relationship with Jesus Christ.
+                Our mission is underpinned by our commitment to community participation and engagement.
+              </p>
+              <p>
+                We will play an active role in supporting community initiatives that promote harmony
+                and development of local communities. We are a church committed to expressing the love
+                of Christ towards those in need, providing support to the vulnerable and oppressed in
+                the local community.
+              </p>
             </div>
-            <Reveal direction="right" className="about-mission-image">
-              <Image
-                src="/images/congregation8.jpg"
-                alt="Our congregation"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                style={{ objectFit: "cover", objectPosition: "center" }}
-              />
-            </Reveal>
+          </Reveal>
+          <div className="about-mission-image">
+            <Image
+              src="/images/congregation8.jpg"
+              alt="Our congregation"
+              fill
+              sizes="100vw"
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
           </div>
         </section>
 

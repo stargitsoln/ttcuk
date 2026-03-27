@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "./Reveal";
 
 const actions = [
@@ -5,19 +6,19 @@ const actions = [
     title: "Prayer Request",
     text: "We're here to pray with you. Send your request and we'll stand in faith together.",
     cta: "Let's Pray →",
-    href: "mailto:info@thetransformingchurchuk.org?subject=Prayer%20Request",
+    href: "/contact",
   },
   {
     title: "Testimony",
     text: "Share how God has transformed your life and inspire others with your story.",
     cta: "Share With Us →",
-    href: "mailto:info@thetransformingchurchuk.org?subject=Testimony",
+    href: "/contact",
   },
   {
     title: "Become a Member",
     text: "Be part of a loving, faith-filled community. There's a place here for you.",
     cta: "Get In Touch →",
-    href: "mailto:info@thetransformingchurchuk.org?subject=Membership%20Enquiry",
+    href: "/contact",
   },
   {
     title: "Watch Sermons",
@@ -45,13 +46,13 @@ export default function Connect() {
             <div className="action-card">
               <h3 className="action-title">{a.title}</h3>
               <p className="action-text">{a.text}</p>
-              <a
-                href={a.href}
-                {...(a.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="action-btn"
-              >
-                {a.cta}
-              </a>
+              {a.external ? (
+                <a href={a.href} target="_blank" rel="noopener noreferrer" className="action-btn">
+                  {a.cta}
+                </a>
+              ) : (
+                <Link href={a.href} className="action-btn">{a.cta}</Link>
+              )}
             </div>
           </Reveal>
         ))}

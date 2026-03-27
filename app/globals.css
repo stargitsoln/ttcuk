@@ -884,20 +884,13 @@
 
   /* Mission */
   .about-mission {
-    padding: 0;
+    padding: 100px 64px;
     background: linear-gradient(135deg, #1A1409 0%, var(--dark) 50%, #0E0C08 100%);
   }
-  .about-mission-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    min-height: 500px;
-  }
-  .about-mission-content {
-    padding: 100px 64px;
-    display: flex; flex-direction: column; justify-content: center;
-  }
   .about-mission-image {
+    display: none;
     position: relative; overflow: hidden;
-    min-height: 400px;
+    min-height: 300px;
   }
   .about-mission-body {
     max-width: 700px;
@@ -1017,9 +1010,12 @@
   .about-hero { padding: 40px 24px 24px !important; }
   .about-values { padding: 60px 24px !important; }
   .values-grid { grid-template-columns: 1fr 1fr !important; gap: 2px !important; }
-  .about-mission-grid { grid-template-columns: 1fr !important; }
-  .about-mission-content { padding: 60px 24px !important; }
-  .about-mission-image { min-height: 300px !important; }
+  .value-card { padding: 36px 16px !important; }
+  .value-letter { font-size: 48px !important; }
+  .value-title { font-size: 15px !important; }
+  .value-verse { font-size: 9px !important; }
+  .about-mission { padding: 60px 24px 0 !important; }
+  .about-mission-image { display: block !important; margin-top: 32px; }
   .about-beliefs { padding: 60px 24px !important; }
   .belief-item { flex-direction: column !important; gap: 12px !important; }
   .about-cta { padding: 80px 24px !important; }
