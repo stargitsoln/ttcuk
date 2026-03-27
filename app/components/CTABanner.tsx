@@ -17,7 +17,7 @@ export default function CTABanner() {
           in the world — there&apos;s a place for you at The Transforming Church UK.
         </p>
         <div className="final-cta-btns">
-          <a href="/contact" className="btn-primary">Get In Touch</a>
+          <a href="mailto:info@thetransformingchurchuk.org" className="btn-primary">Get In Touch</a>
           <a
             href="http://www.youtube.com/@TTCUKOnline"
             target="_blank"

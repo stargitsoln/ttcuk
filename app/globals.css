@@ -812,6 +812,136 @@
   }
   .contact-social-icons a:hover { color: var(--gold); }
 
+  /* ─── ABOUT PAGE ─── */
+  .about-page {
+    padding-top: 100px;
+    min-height: 100vh;
+    background: var(--dark);
+  }
+  .about-hero {
+    text-align: center; padding: 60px 64px 40px;
+  }
+  .about-heading {
+    font-family: var(--font-display), serif;
+    font-size: clamp(40px, 7vw, 72px); font-weight: 300;
+    color: var(--white); line-height: 1.1; margin-top: 8px;
+  }
+  .about-intro {
+    font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.6);
+    line-height: 1.9; max-width: 680px; margin: 16px auto 0;
+    text-align: center;
+  }
+
+  /* Values */
+  .about-values {
+    padding: 100px 64px; background: var(--mid);
+  }
+  .about-values-intro {
+    font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.5);
+    line-height: 1.8; max-width: 640px; margin: -24px auto 48px;
+    text-align: center;
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+  .value-card {
+    padding: 48px 28px; text-align: center;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(201,168,76,0.08);
+    position: relative; overflow: hidden;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .value-card:hover {
+    border-color: rgba(201,168,76,0.3);
+    background: rgba(201,168,76,0.04);
+  }
+  .value-card::after {
+    content: ''; position: absolute; bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 2px; background: var(--gold);
+    transition: width 0.4s;
+  }
+  .value-card:hover::after { width: 60%; }
+  .value-letter {
+    font-family: var(--font-display), serif;
+    font-size: 64px; font-weight: 300;
+    color: rgba(201,168,76,0.2); line-height: 1;
+    display: block; margin-bottom: 16px;
+    transition: color 0.3s;
+  }
+  .value-card:hover .value-letter { color: var(--gold); }
+  .value-title {
+    font-family: var(--font-display), serif;
+    font-size: 18px; font-weight: 400;
+    color: var(--white); margin-bottom: 12px;
+  }
+  .value-verse {
+    font-size: 10px; letter-spacing: 2px;
+    color: var(--gold); text-transform: uppercase;
+  }
+
+  /* Mission */
+  .about-mission {
+    padding: 0;
+    background: linear-gradient(135deg, #1A1409 0%, var(--dark) 50%, #0E0C08 100%);
+  }
+  .about-mission-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+  }
+  .about-mission-content {
+    padding: 100px 64px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .about-mission-image {
+    position: relative; overflow: hidden;
+    min-height: 400px;
+  }
+  .about-mission-body {
+    max-width: 700px;
+  }
+  .about-mission-body p {
+    font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.55);
+    line-height: 1.9; margin-bottom: 20px;
+  }
+
+  /* Beliefs (reuses existing .belief-item, .belief-num, .belief-verse, .belief-text) */
+  .about-beliefs {
+    padding: 100px 64px; background: var(--mid);
+    position: relative; overflow: hidden;
+  }
+
+  /* Get Involved CTA */
+  .about-cta {
+    position: relative; padding: 120px 64px; text-align: center; overflow: hidden;
+    background: linear-gradient(to bottom, var(--dark), #0E0C08);
+  }
+  .about-cta::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(201,168,76,0.1), transparent 65%);
+  }
+  .about-cta-title {
+    font-family: var(--font-display), serif;
+    font-size: clamp(28px, 4vw, 48px); font-weight: 300;
+    color: var(--white); line-height: 1.25; margin-bottom: 32px;
+    position: relative;
+  }
+  .about-cta-title em { color: var(--gold-light); font-style: italic; }
+  .about-thankyou {
+    max-width: 600px; margin: 0 auto 48px; position: relative;
+  }
+  .about-thankyou p {
+    font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.5);
+    line-height: 1.8;
+  }
+  .about-thankyou strong { color: var(--gold-light); font-weight: 400; }
+  .about-cta-btns {
+    display: flex; gap: 20px; justify-content: center;
+    flex-wrap: wrap; position: relative;
+  }
+
 }
 
 /* ─── KEYFRAMES (must be outside @layer) ─── */
@@ -882,4 +1012,15 @@
 
   /* Footer bottom */
   .footer-bottom { flex-direction: column !important; align-items: flex-start !important; }
+
+  /* About page */
+  .about-hero { padding: 40px 24px 24px !important; }
+  .about-values { padding: 60px 24px !important; }
+  .values-grid { grid-template-columns: 1fr 1fr !important; gap: 2px !important; }
+  .about-mission-grid { grid-template-columns: 1fr !important; }
+  .about-mission-content { padding: 60px 24px !important; }
+  .about-mission-image { min-height: 300px !important; }
+  .about-beliefs { padding: 60px 24px !important; }
+  .belief-item { flex-direction: column !important; gap: 12px !important; }
+  .about-cta { padding: 80px 24px !important; }
 }
