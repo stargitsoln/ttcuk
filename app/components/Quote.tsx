@@ -5,12 +5,11 @@ export default function Quote() {
     <section className="quote-section">
       <Reveal>
         <p className="quote-text">
-          &ldquo;Whether you&apos;re new to faith or seeking deeper spiritual growth,
-          there&apos;s a place for you here.&rdquo;
+          &ldquo;We exist to lead people into a life-transforming relationship with GOD.&rdquo;
         </p>
       </Reveal>
       <Reveal delay={0.2}>
-        <span className="quote-attr">— The Transforming Church UK</span>
+        <span className="quote-attr">— Mission, The Transforming Church UK</span>
       </Reveal>
     </section>
   );
