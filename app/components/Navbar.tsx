@@ -7,6 +7,7 @@ const links = [
   { label: "Sermons", href: "#sermons" },
   { label: "Beliefs", href: "#beliefs" },
   { label: "Connect", href: "#connect" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
