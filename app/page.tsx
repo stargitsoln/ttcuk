@@ -22,11 +22,11 @@ export default function Home() {
       <CustomCursor />
       <Navbar />
       <Hero />
+      <Quote />
       <ServiceStrip />
       <About />
       <Services />
       <OnlineMeetings />
-      <Quote />
       <Pillars />
       <Connect />
       <Testimonies />
