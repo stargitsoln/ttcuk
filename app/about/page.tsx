@@ -98,6 +98,11 @@ export default function AboutPage() {
             style={{ height: 48, width: "auto", display: "block" }}
           />
         </Link>
+        <div className="about-nav-anchors">
+          <a href="#values" className="about-nav-link">Values</a>
+          <a href="#mission" className="about-nav-link">Mission</a>
+          <a href="#beliefs" className="about-nav-link">Beliefs</a>
+        </div>
         <Link href="/" className="contact-back">
           &larr; Back Home
         </Link>
@@ -106,27 +111,40 @@ export default function AboutPage() {
       <main className="about-page">
         {/* Hero */}
         <section className="about-hero">
-          <Reveal>
-            <span className="section-label" style={{ display: "block", textAlign: "center" }}>
-              About Us
-            </span>
-            <h1 className="about-heading">Who We Are</h1>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <p className="about-intro">
-              The Transforming Church is a church with a strong commitment to Kingdom values.
-              We are deeply committed to the essential foundations of discipleship, fellowship,
-              ministry, and mission.
-            </p>
-            <p className="about-intro">
-              We are a community-based organization focused on helping make the world around us
-              a better, happier place.
-            </p>
-          </Reveal>
+          <div className="about-hero-img-wrap">
+            <Image
+              src="/images/congregation8.jpg"
+              alt="TTCUK Congregation"
+              fill
+              sizes="100vw"
+              style={{ objectFit: "cover", objectPosition: "center top" }}
+              priority
+            />
+            <div className="about-hero-overlay" />
+          </div>
+          <div className="about-hero-content">
+            <Reveal>
+              <span className="section-label" style={{ display: "block", textAlign: "center" }}>
+                About Us
+              </span>
+              <h1 className="about-heading">Who We Are</h1>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <p className="about-intro">
+                The Transforming Church is a church with a strong commitment to Kingdom values.
+                We are deeply committed to the essential foundations of discipleship, fellowship,
+                ministry, and mission.
+              </p>
+              <p className="about-intro">
+                We are a community-based organization focused on helping make the world around us
+                a better, happier place.
+              </p>
+            </Reveal>
+          </div>
         </section>
 
         {/* Our Values — L.I.F.E */}
-        <section className="about-values">
+        <section className="about-values" id="values">
           <Reveal>
             <span className="section-label" style={{ display: "block", textAlign: "center" }}>
               Our Values
@@ -153,7 +171,7 @@ export default function AboutPage() {
         </section>
 
         {/* Our Mission */}
-        <section className="about-mission">
+        <section className="about-mission" id="mission">
           <Reveal>
             <span className="section-label" style={{ display: "block" }}>
               Our Mission
@@ -189,7 +207,7 @@ export default function AboutPage() {
         </section>
 
         {/* Our Beliefs */}
-        <section className="about-beliefs">
+        <section className="about-beliefs" id="beliefs">
           <video
             className="section-bg-video"
             autoPlay
