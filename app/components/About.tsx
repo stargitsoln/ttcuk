@@ -2,25 +2,25 @@ import Reveal from "./Reveal";
 
 const features = [
   {
-    num: "01",
+    num: "I",
     title: "Dynamic Worship",
     text: "Feel the presence of God in an atmosphere of passionate praise and deep worship that moves the soul.",
     img: "/images/choir-ministration.jpg",
   },
   {
-    num: "02",
+    num: "II",
     title: "Powerful Teachings",
     text: "Biblical, life-changing messages rooted in Kingdom values that will equip you to thrive in every season.",
     img: "/images/pastor-yinka.jpg",
   },
   {
-    num: "03",
+    num: "III",
     title: "Loving Community",
     text: "Build meaningful, lasting relationships in a church that truly cares about YOU and your journey.",
     img: "/images/church-having-fun.jpg",
   },
   {
-    num: "04",
+    num: "IV",
     title: "Prayers & Miracles",
     text: "Experience divine breakthroughs through our prophetic prayers and powerful intercessions.",
     img: "/images/revsam2.jpg",

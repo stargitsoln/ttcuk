@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "../components/Reveal";
 import Footer from "../components/Footer";
+import Chatbot from "../components/Chatbot";
 
 const values = [
   {
@@ -28,57 +29,57 @@ const values = [
 
 const beliefs = [
   {
-    num: "01",
+    num: "I",
     text: "We believe that the Bible (the Old and New Testament) is inspired by God as the complete revelation of His Will to mankind and the final authority for Christian faith. Therefore, we shall not allow or practise anything that is not scriptural.",
     verse: "John 5:39; 2 Timothy 3:16-17; 2 Peter 1:20-21",
   },
   {
-    num: "02",
+    num: "II",
     text: "We believe in one God, infinitely perfect and eternally existing in three Persons\u2014the Father, the Son, and the Holy Spirit. He is the Creator of the heavens and the Ruler of the natural (material) and supernatural (spiritual) world.",
     verse: "Deuteronomy 6:4; Matthew 28:19; Acts 5:3-4; John 5:18; John 10:30",
   },
   {
-    num: "03",
+    num: "III",
     text: "We believe that all have sinned and cannot be saved by works but by grace through faith in the finished works of Jesus Christ who was born of the Virgin Mary, died on the Cross, was buried, rose bodily from the dead, ascended into Heaven, where He is now at the right hand of the Majesty on High as our High Priest and Advocate.",
     verse: "John 1:13; John 5:18; 1 Peter 2:21; Hebrews 10:1-10; Colossians 1:17",
   },
   {
-    num: "04",
+    num: "IV",
     text: "We believe that the church is the assembly of redeemed believers in Christ, who have also taken the next step to be baptized in water, meet together in fellowship centrally and locally every week in order to take the Lord\u2019s Supper (communion), encourage, edify, equip and empower one another.",
     verse: "Matthew 16:17-19, 28:19-20; Ephesians 4:11-13",
   },
   {
-    num: "05",
+    num: "V",
     text: "We believe that the church exists in the community to advance God\u2019s Kingdom in the community and beyond.",
     verse: "Matthew 16:17-19, 28:19-20; Ephesians 4:11-13",
   },
   {
-    num: "06",
+    num: "VI",
     text: "We believe that God has provided spiritual gifts and given men as ministry gifts to the Church, some as apostles, prophets, teachers, pastors and evangelists in order to equip the believers who in turn do the work of the ministry wherever they work.",
     verse: "1 Corinthians 12:1-12; Ephesians 4:7-13",
   },
   {
-    num: "07",
+    num: "VII",
     text: "We believe that in Christ there is neither male nor female therefore, women (alongside the men) are permitted to do whatever they are called, anointed, talented and gifted to do within and outside the Church.",
     verse: "Galatians 3:26-29",
   },
   {
-    num: "08",
+    num: "VIII",
     text: "We believe that real life transformation takes place in small groups or smaller fellowship settings within our communities or spheres of influence where believers get to know one another, love one another, share with one another, pray for one another, and serve one another. Therefore, we encourage everyone to get involved in a small group.",
     verse: "Acts 2:44-47",
   },
   {
-    num: "09",
+    num: "IX",
     text: "We believe that the message of the church must never change but its delivery method must constantly change to capture the generation it is seeking to reach therefore, the church will constantly innovate and leverage current technologies to reach the unsaved and unchurched.",
     verse: "1 Corinthians 9:22-23",
   },
   {
-    num: "10",
+    num: "X",
     text: "We believe that the primary purpose of the church on earth is to worship, glorify God and go into the world to evangelize, make disciples of all nations and plant reproducing churches starting from the communities, cities and countries surrounding the Church.",
     verse: "Matthew 28:18-20; Mark 16:15; Acts 1:8",
   },
   {
-    num: "11",
+    num: "XI",
     text: "We believe that we are in the last days and God is pouring out His Spirit upon all who receive Christ to enable us carry out the Great Commission with the demonstration of His power through the operations of the gifts of the Holy Spirit who will continue to guide us into all truth as He glorifies Jesus.",
     verse: "John 16:8-11; Titus 2:5; 1 Corinthians 6:19; 1 Corinthians 12:13; Ephesians 4:30; Ephesians 5:18",
   },
@@ -253,6 +254,7 @@ export default function AboutPage() {
       </main>
 
       <Footer />
+      <Chatbot />
     </>
   );
 }
