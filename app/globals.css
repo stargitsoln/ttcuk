@@ -363,6 +363,7 @@
     background: var(--mid); cursor: pointer;
     min-height: 380px;
     display: flex; flex-direction: column; justify-content: flex-end;
+    isolation: isolate;
     transition: background 0.4s;
   }
   /* Image visible by default — fades out on hover */
@@ -582,7 +583,7 @@
     text-align: center;
     padding: 48px 0 56px;
     border-bottom: 1px solid rgba(201,168,76,0.12);
-    margin-bottom: 64px;
+    margin: 0 auto 64px;
     max-width: 800px;
   }
   .pillars-mission-quote {
@@ -606,7 +607,8 @@
   }
 
   /* ─── BELIEFS ─── */
-  .beliefs-section { padding: 100px 64px; background: var(--mid); position: relative; overflow: hidden; }
+  .beliefs-section { padding: 100px 64px; background: var(--mid); position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; }
+  .beliefs-section > * { width: 100%; max-width: 800px; }
   .belief-item {
     border-top: 1px solid rgba(255,255,255,0.06);
     padding: 32px 0; display: flex; gap: 32px;
@@ -642,6 +644,7 @@
     padding: 48px 28px; text-align: center; background: var(--mid);
     position: relative; overflow: hidden; cursor: pointer;
     transition: background 0.3s;
+    display: flex; flex-direction: column; height: 100%;
   }
   .action-card::before {
     content: ''; position: absolute; bottom: 0; left: 50%;
@@ -659,6 +662,7 @@
   .action-text {
     font-size: 12px; color: rgba(255,255,255,0.45);
     line-height: 1.7; margin-bottom: 20px;
+    flex: 1;
   }
   .action-btn {
     font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
@@ -680,12 +684,26 @@
   }
   .ghost-word {
     font-family: var(--font-display), serif;
-    font-size: clamp(80px, 18vw, 200px); font-weight: 300;
-    opacity: 0.04; position: absolute;
+    font-weight: 300;
+    opacity: 0.045; position: absolute;
     bottom: 0; left: 50%; transform: translateX(-50%);
     white-space: nowrap; color: var(--gold-light);
-    pointer-events: none; letter-spacing: -4px;
+    pointer-events: none;
     animation: ghost-pulse 6s ease-in-out infinite;
+    display: flex; flex-direction: column; align-items: flex-start;
+    line-height: 1;
+  }
+  .ghost-be {
+    font-size: clamp(14px, 2vw, 28px);
+    letter-spacing: 0.55em;
+    font-weight: 200;
+    margin-left: 0.08em;
+    margin-bottom: 0.05em;
+    opacity: 0.7;
+  }
+  .ghost-transformed {
+    font-size: clamp(80px, 18vw, 200px);
+    letter-spacing: -0.02em;
   }
   .final-title {
     font-family: var(--font-display), serif;
@@ -1018,7 +1036,7 @@
 
   /* ─── TESTIMONIES ─── */
   .testimonies-section {
-    padding: 100px 0; background: var(--mid); overflow: hidden;
+    padding: 100px 0; background: var(--dark); overflow: hidden;
   }
   .testimonies-header {
     padding: 0 64px 64px; text-align: center;
@@ -1033,11 +1051,11 @@
   }
   .testimonies-track-wrap::before {
     left: 0;
-    background: linear-gradient(to right, var(--mid), transparent);
+    background: linear-gradient(to right, var(--dark), transparent);
   }
   .testimonies-track-wrap::after {
     right: 0;
-    background: linear-gradient(to left, var(--mid), transparent);
+    background: linear-gradient(to left, var(--dark), transparent);
   }
   .testimonies-track {
     display: flex; gap: 24px;

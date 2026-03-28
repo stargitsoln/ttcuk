@@ -4,9 +4,7 @@ import ServiceStrip from "./components/ServiceStrip";
 import About from "./components/About";
 import Services from "./components/Services";
 import OnlineMeetings from "./components/OnlineMeetings";
-import Quote from "./components/Quote";
 import Pillars from "./components/Pillars";
-import Connect from "./components/Connect";
 import Testimonies from "./components/Testimonies";
 import CTABanner from "./components/CTABanner";
 import Footer from "./components/Footer";
@@ -22,14 +20,13 @@ export default function Home() {
       <CustomCursor />
       <Navbar />
       <Hero />
-      <Quote />
-      <ServiceStrip />
-      <About />
       <Services />
       <OnlineMeetings />
+      <About />
       <Pillars />
-      <Connect />
+      <ServiceStrip />
       <Testimonies />
+
       <CTABanner />
       <Footer />
       <Chatbot />

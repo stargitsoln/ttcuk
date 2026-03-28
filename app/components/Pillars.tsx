@@ -29,12 +29,34 @@ export default function Pillars() {
     <section id="beliefs" className="beliefs-section">
       <BgVideo src="/images/TTCUK-logo.mp4" className="section-bg-video" />
       <div className="section-bg-overlay" />
-      <Reveal style={{ position: "relative", zIndex: 1 }}>
-        <span className="section-label">Foundation</span>
-        <h2 className="section-title">Our Beliefs</h2>
+
+      {/* Our Mission */}
+      <Reveal delay={0.1} style={{ position: "relative", zIndex: 1 }}>
+        <div className="pillars-mission">
+          <span className="section-label" style={{ display: "block", textAlign: "center" }}>
+            Our Mission
+          </span>
+          <blockquote className="pillars-mission-quote">
+            &ldquo;We exist to lead people into a life&#8209;transforming relationship with{" "}
+            <em className="pillars-mission-god">GOD</em>.&rdquo;
+          </blockquote>
+          <div className="pillars-mission-ornament">
+            <span className="mission-orn-line" />
+            <span className="mission-orn-diamond">◆</span>
+            <span className="mission-orn-line" />
+          </div>
+          <cite className="pillars-mission-attr">— Mission, The Transforming Church UK</cite>
+        </div>
       </Reveal>
+
+      {/* Our Beliefs */}
+      <Reveal delay={0.15} style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
+        <span className="section-label" style={{ display: "block", textAlign: "center" }}>Our Beliefs</span>
+        <h2 className="section-title" style={{ textAlign: "center" }}>What We <em>Believe</em></h2>
+      </Reveal>
+
       {beliefs.map((b, i) => (
-        <Reveal key={b.num} delay={i * 0.1} style={{ position: "relative", zIndex: 1 }}>
+        <Reveal key={b.num} delay={0.2 + i * 0.1} style={{ position: "relative", zIndex: 1 }}>
           <div className="belief-item">
             <div className="belief-num">{b.num}</div>
             <div>
