@@ -13,8 +13,8 @@ export default function Footer() {
           />
         </div>
         <div className="footer-info">
-          Ark Pioneer Academy, Westcombe Drive, Barnet, EN5 2BE<br />
-          Sundays 11AM – 1PM · Free Parking · Family-Friendly
+          The Transforming Church is a Registered Charity No. 1194579<br />
+          Sundays 11AM – 1PM · Family-Friendly
         </div>
         <div className="footer-contact">
           <a href="tel:+447842671760">+44 7842 671760</a><br />

@@ -5,16 +5,19 @@ const meetings = [
     time: "Wednesday · 8PM GMT",
     name: "Water Brook",
     desc: "Bible Study — Online via Zoom",
+    link: "https://bit.ly/joinTTCUK",
   },
   {
     time: "Daily · 9PM GMT",
     name: "Prayer Surge",
     desc: "Prayer Meeting — Online via Zoom",
+    link: "https://www.youtube.com/ttcukonline",
   },
   {
     time: "Last Friday · 11PM GMT",
     name: "Mega Prayer Surge",
     desc: "Monthly Intercession — Online via Zoom",
+    link: "https://www.youtube.com/ttcukonline",
   },
 ];
 
@@ -33,7 +36,7 @@ export default function OnlineMeetings() {
               <div className="meeting-name">{m.name}</div>
               <p className="meeting-desc">{m.desc}</p>
               <a
-                href="https://bit.ly/joinTTCUK"
+                href={m.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="meeting-link"

@@ -6,13 +6,15 @@ const actions = [
     title: "Prayer Request",
     text: "We're here to pray with you. Send your request and we'll stand in faith together.",
     cta: "Let's Pray →",
-    href: "/contact",
+    href: "mailto:prayer@thetransformingchurchuk.org?subject=Prayer%20Request",
+    external: true,
   },
   {
     title: "Testimony",
     text: "Share how God has transformed your life and inspire others with your story.",
     cta: "Share With Us →",
-    href: "/contact",
+    href: "mailto:testimonies@thetransformingchurchuk.org?subject=My%20Testimony",
+    external: true,
   },
   {
     title: "Become a Member",

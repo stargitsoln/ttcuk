@@ -21,6 +21,8 @@ export const metadata: Metadata = {
   keywords: "church, Barnet, London, Christian, Sunday service, TTCUK",
 };
 
+import CookieConsent from "./components/CookieConsent";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,7 +30,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
-      <body style={{ fontFamily: "var(--font-body), sans-serif" }}>{children}</body>
+      <body style={{ fontFamily: "var(--font-body), sans-serif" }}>
+        {children}
+        <CookieConsent />
+      </body>
     </html>
   );
 }
