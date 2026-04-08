@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   title: "The Transforming Church UK",
   description: "One Church. Making Global Impact. Join us every Sunday at Ark Pioneer Academy, Barnet — or online from anywhere in the world.",
   keywords: "church, Barnet, London, Christian, Sunday service, TTCUK",
+  icons: {
+    icon: [
+      { url: "/images/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
 };
 
 import CookieConsent from "./components/CookieConsent";
