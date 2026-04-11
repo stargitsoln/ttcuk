@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 
 export default function Services() {
   return (
-    <div id="services" className="times-block">
+    <div id="services" className="times-block" style={{ background: "var(--dark)" }}>
       <Reveal>
         <span className="section-label" style={{ textAlign: "center", display: "block" }}>
           Gather With Us

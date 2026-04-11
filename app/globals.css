@@ -138,8 +138,8 @@
 
   .rays { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
   .ray {
-    position: absolute; top: -20%; left: 50%; width: 1px;
-    background: linear-gradient(to bottom, rgba(0,140,187,0.3), transparent);
+    position: absolute; top: -20%; left: 50%; width: 2px;
+    background: linear-gradient(to bottom, rgba(250,168,49,0.45), transparent);
     transform-origin: top center;
     animation: ray-fade 4s ease-in-out infinite; opacity: 0;
   }
@@ -189,7 +189,7 @@
     cursor: pointer; transition: all 0.3s;
     text-decoration: none; display: inline-block;
   }
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-outline:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); transform: translateY(-2px); }
 
   .hero-dots {
     position: absolute; bottom: 32px; left: 50%;
@@ -224,7 +224,11 @@
   .sermons-section {
     position: relative; overflow: hidden;
     padding: 100px 0 100px;
-    background: var(--mid);
+    background: linear-gradient(180deg, var(--mid) 0%, rgba(30,20,8,0.98) 50%, var(--mid) 100%);
+  }
+  .sermons-section::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 80% 40% at 50% 50%, rgba(250,168,49,0.06) 0%, transparent 70%);
   }
   .sermons-section > div[style] { padding: 0 64px; }
   .sermons-carousel-wrap {
@@ -367,7 +371,10 @@
     min-height: 380px;
     display: flex; flex-direction: column; justify-content: flex-end;
     isolation: isolate;
-    transition: background 0.4s;
+    transition: background 0.5s;
+  }
+  .feature-card:hover {
+    background: linear-gradient(135deg, rgba(0,140,187,0.18) 0%, var(--mid) 55%, rgba(250,168,49,0.1) 100%);
   }
   /* Image visible by default — fades out on hover */
   .card-bg-image {
@@ -419,11 +426,11 @@
     position: relative; z-index: 2;
     opacity: 1; transition: transform 0.3s 0.1s, letter-spacing 0.3s;
   }
-  .feature-card:hover .card-arrow { transform: translateX(8px); letter-spacing: 4px; }
-  /* Gold glow line */
+  .feature-card:hover .card-arrow { transform: translateX(8px); letter-spacing: 4px; color: var(--primary); }
+  /* Amber-to-teal glow line */
   .card-line {
     position: absolute; bottom: 0; left: 0; height: 2px; width: 0;
-    background: linear-gradient(to right, var(--gold), var(--gold-light));
+    background: linear-gradient(to right, var(--gold), var(--primary));
     transition: width 0.5s ease; z-index: 2;
   }
   .feature-card:hover .card-line { width: 100%; }
@@ -433,17 +440,23 @@
     padding: 100px 64px;
     background: var(--dark);
     text-align: center;
+    position: relative;
+  }
+  .times-block::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 55% 45% at 50% 50%, rgba(0,140,187,0.05) 0%, transparent 75%);
   }
   .times-ring {
     display: inline-flex; align-items: center; justify-content: center;
     width: 200px; height: 200px; border-radius: 50%;
-    border: 1px solid rgba(250,168,49,0.25);
+    border: 1px solid rgba(0,140,187,0.45);
+    box-shadow: 0 0 24px rgba(0,140,187,0.15);
     position: relative; margin: 40px auto;
     animation: rotate-slow 25s linear infinite;
   }
   .times-ring::before {
     content: ''; position: absolute; inset: 14px; border-radius: 50%;
-    border: 1px solid rgba(250,168,49,0.1);
+    border: 1px solid rgba(0,140,187,0.2);
   }
   .times-inner {
     display: flex; flex-direction: column; align-items: center;
@@ -456,7 +469,7 @@
   }
   .times-inner .small {
     font-size: 10px; letter-spacing: 4px;
-    text-transform: uppercase; color: rgba(255,255,255,0.4);
+    text-transform: uppercase; color: rgba(0,140,187,0.7);
   }
   .orbit-dot {
     position: absolute; width: 8px; height: 8px; border-radius: 50%;
@@ -479,7 +492,7 @@
   }
   .service-image-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(90deg, transparent 60%, rgba(21,15,5,0.95) 100%);
+    background: linear-gradient(90deg, transparent 55%, #1E1E1E 100%);
   }
   .service-info {
     display: flex; flex-direction: column;
@@ -488,44 +501,73 @@
   }
 
   /* ─── ONLINE MEETINGS ─── */
+  #online {
+    background: linear-gradient(175deg, var(--mid) 0%, rgba(0,18,28,0.99) 55%, var(--mid) 100%) !important;
+    position: relative;
+  }
+  #online::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 80% 55% at 50% 50%, rgba(0,140,187,0.09) 0%, transparent 70%);
+  }
   .meetings-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px; margin-top: 48px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2px; margin-top: 48px;
   }
   .meeting-card {
-    padding: 36px 28px;
-    border: 1px solid rgba(250,168,49,0.15);
+    padding: 44px 32px;
+    background: var(--mid);
+    border-left: 3px solid var(--primary);
     position: relative; overflow: hidden;
-    transition: border-color 0.3s;
+    transition: background 0.45s, border-color 0.35s;
+    display: flex; flex-direction: column;
   }
-  .meeting-card:hover { border-color: rgba(250,168,49,0.5); }
-  .meeting-card::after {
+  /* Amber top-right corner glow — static accent */
+  .meeting-card::before {
     content: ''; position: absolute; top: 0; right: 0;
-    width: 3px; height: 0;
-    background: linear-gradient(to bottom, var(--gold), transparent);
-    transition: height 0.4s ease;
+    width: 90px; height: 90px;
+    background: radial-gradient(circle at top right, rgba(250,168,49,0.2) 0%, transparent 70%);
+    pointer-events: none; transition: opacity 0.4s;
   }
-  .meeting-card:hover::after { height: 100%; }
+  /* Amber-to-teal sweep line — reveals on hover */
+  .meeting-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    height: 2px; width: 0;
+    background: linear-gradient(to right, var(--gold), var(--primary));
+    transition: width 0.55s ease;
+  }
+  .meeting-card:hover::after { width: 100%; }
+  .meeting-card:hover {
+    background: linear-gradient(135deg, rgba(0,140,187,0.12) 0%, var(--mid) 55%, rgba(250,168,49,0.07) 100%);
+    border-left-color: var(--primary-light);
+  }
+  .meeting-card:hover::before { opacity: 0.5; }
   .meeting-time {
     font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 16px; display: block;
+    color: var(--gold); margin-bottom: 20px; display: block;
   }
   .meeting-name {
     font-family: var(--font-display), serif;
-    font-size: 24px; font-weight: 400;
-    margin-bottom: 10px; color: var(--white);
+    font-size: 26px; font-weight: 400;
+    margin-bottom: 12px; color: var(--white); line-height: 1.2;
   }
   .meeting-desc {
     font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 300;
+    line-height: 1.75; flex: 1;
   }
   .meeting-link {
-    display: inline-block; margin-top: 20px;
-    font-size: 10px; letter-spacing: 3px;
-    text-transform: uppercase; color: var(--gold);
-    text-decoration: none; transition: letter-spacing 0.3s;
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 28px; align-self: flex-start;
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--primary); text-decoration: none;
+    border: 1px solid rgba(0,140,187,0.4);
+    padding: 9px 18px;
+    transition: background 0.3s, color 0.3s, border-color 0.3s, letter-spacing 0.3s;
   }
-  .meeting-link:hover { letter-spacing: 5px; }
+  .meeting-link:hover {
+    background: var(--primary); color: var(--white);
+    border-color: var(--primary); letter-spacing: 4px;
+  }
 
   /* ─── MISSION STATEMENT ─── */
   .mission-section {
@@ -610,8 +652,10 @@
   }
 
   /* ─── BELIEFS ─── */
-  .beliefs-section { padding: 100px 64px; background: var(--mid); position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; }
-  .beliefs-section > * { width: 100%; max-width: 800px; }
+  .beliefs-section { padding: 100px 64px; background: var(--mid); position: relative; overflow: hidden; }
+  .beliefs-section > *:not(.section-bg-video):not(.section-bg-overlay) {
+    max-width: 800px; margin-left: auto; margin-right: auto;
+  }
   .belief-item {
     border-top: 1px solid rgba(255,255,255,0.06);
     padding: 32px 0; display: flex; gap: 32px;
@@ -630,14 +674,16 @@
   .belief-verse {
     font-size: 10px; letter-spacing: 3px; color: var(--gold);
     text-transform: uppercase; margin-bottom: 12px;
+    transition: color 0.3s;
   }
+  .belief-item:hover .belief-verse { color: var(--primary); }
   .belief-text {
     font-size: 14px; color: rgba(255,255,255,0.55);
     line-height: 1.85; font-weight: 300;
   }
 
   /* ─── ACTION CARDS ─── */
-  .action-section { padding: 100px 64px; background: var(--dark); }
+  .action-section { padding: 100px 64px; background: linear-gradient(160deg, var(--dark) 0%, rgba(0,18,26,0.98) 50%, var(--dark) 100%); }
   .action-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -675,6 +721,77 @@
     text-decoration: none;
   }
   .action-card:hover .action-btn { letter-spacing: 5px; }
+
+  /* ─── MODALS ─── */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 9000;
+    background: rgba(0,0,0,0.75); backdrop-filter: blur(6px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+    animation: fade-in 0.2s ease;
+  }
+  .modal-card {
+    position: relative;
+    background: #1A1A1A;
+    border: 1px solid rgba(0,140,187,0.25);
+    padding: 48px 40px;
+    width: 100%; max-width: 520px;
+    max-height: 90vh; overflow-y: auto;
+    animation: slide-up 0.3s ease;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(250,168,49,0.08);
+  }
+  .modal-close {
+    position: absolute; top: 16px; right: 20px;
+    background: none; border: none; cursor: pointer;
+    color: rgba(255,255,255,0.4); font-size: 20px;
+    transition: color 0.2s; line-height: 1; padding: 4px;
+  }
+  .modal-close:hover { color: var(--gold); }
+  .modal-title {
+    font-family: var(--font-display), serif;
+    font-size: clamp(24px, 4vw, 36px); font-weight: 300;
+    color: var(--white); margin-bottom: 32px; line-height: 1.15;
+  }
+  .modal-form { display: flex; flex-direction: column; gap: 20px; }
+  .modal-field { display: flex; flex-direction: column; gap: 8px; }
+  .modal-field label {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .modal-field input,
+  .modal-field textarea {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white); padding: 14px 16px;
+    font-family: var(--font-body), sans-serif;
+    font-size: 14px; font-weight: 300;
+    outline: none; resize: vertical;
+    transition: border-color 0.25s;
+  }
+  .modal-field input::placeholder,
+  .modal-field textarea::placeholder { color: rgba(255,255,255,0.2); }
+  .modal-field input:focus,
+  .modal-field textarea:focus { border-color: var(--primary); }
+  /* Success state */
+  .modal-success {
+    text-align: center; padding: 24px 0;
+  }
+  .modal-success-icon {
+    font-size: 32px; color: var(--gold); margin-bottom: 20px;
+    animation: god-glow 3s ease-in-out infinite;
+  }
+  .modal-success-text {
+    font-size: 14px; color: rgba(255,255,255,0.55);
+    line-height: 1.8; max-width: 360px; margin: 0 auto;
+  }
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
 
   /* ─── FINAL CTA ─── */
   .final-cta {
@@ -739,6 +856,10 @@
     font-size: 18px; color: rgba(255,255,255,0.6);
   }
   .footer-logo span { color: var(--primary); }
+  .footer-center {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 16px; flex: 1; text-align: center;
+  }
   .footer-info {
     font-size: 12px; color: rgba(255,255,255,0.3);
     line-height: 1.8; text-align: center;
@@ -750,14 +871,14 @@
 
   /* ─── FOOTER EXTRAS ─── */
   .footer-bottom {
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; justify-content: center; align-items: center;
     flex-wrap: wrap; gap: 16px;
     margin-top: 32px; padding-top: 24px;
     border-top: 1px solid rgba(250,168,49,0.08);
   }
   .footer-copy {
     font-size: 11px; color: rgba(255,255,255,0.25);
-    letter-spacing: 1px;
+    letter-spacing: 1px; text-align: center;
   }
   .footer-copy a {
     color: rgba(255,255,255,0.35); text-decoration: none;
@@ -765,13 +886,13 @@
   }
   .footer-copy a:hover { color: var(--gold); }
   .footer-socials {
-    display: flex; gap: 16px; align-items: center;
+    display: flex; gap: 20px; align-items: center; justify-content: center;
   }
   .footer-socials a {
-    color: rgba(255,255,255,0.3); transition: color 0.3s;
+    color: rgba(255,255,255,0.35); transition: color 0.3s;
     display: flex; align-items: center;
   }
-  .footer-socials a:hover { color: var(--gold); }
+  .footer-socials a:hover { color: var(--primary); }
 
   /* ─── CONTACT PAGE ─── */
   .contact-nav {
@@ -956,13 +1077,13 @@
     transition: border-color 0.3s, background 0.3s;
   }
   .value-card:hover {
-    border-color: rgba(201,168,76,0.3);
-    background: rgba(201,168,76,0.04);
+    border-color: rgba(0,140,187,0.35);
+    background: rgba(0,140,187,0.05);
   }
   .value-card::after {
     content: ''; position: absolute; bottom: 0; left: 50%;
     transform: translateX(-50%);
-    width: 0; height: 2px; background: var(--gold);
+    width: 0; height: 2px; background: var(--primary);
     transition: width 0.4s;
   }
   .value-card:hover::after { width: 60%; }
@@ -973,15 +1094,52 @@
     display: block; margin-bottom: 16px;
     transition: color 0.3s;
   }
-  .value-card:hover .value-letter { color: var(--gold); }
+  .value-card:hover .value-letter { color: var(--primary); }
   .value-title {
     font-family: var(--font-display), serif;
     font-size: 18px; font-weight: 400;
     color: var(--white); margin-bottom: 12px;
+    transition: color 0.3s;
   }
+  .value-card:hover .value-title { color: var(--primary); }
   .value-verse {
     font-size: 10px; letter-spacing: 2px;
     color: var(--gold); text-transform: uppercase;
+    display: block;
+  }
+  .value-card-front {
+    position: relative; z-index: 2;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .value-card:hover .value-card-front {
+    opacity: 0; transform: translateY(-8px);
+  }
+  .value-card-back {
+    position: absolute; inset: 0; z-index: 1;
+    padding: 32px 24px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    opacity: 0; visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s;
+    pointer-events: none;
+  }
+  .value-card:hover .value-card-back {
+    opacity: 1; visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0s;
+  }
+  .value-quote {
+    font-family: var(--font-display), serif;
+    font-size: 13px; font-weight: 300; font-style: italic;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+    margin: 0 0 14px;
+  }
+  .value-quote-ref {
+    font-size: 9px; letter-spacing: 2.5px;
+    color: var(--primary); text-transform: uppercase;
   }
 
   /* Mission */
@@ -1023,7 +1181,7 @@
     color: var(--white); line-height: 1.25; margin-bottom: 32px;
     position: relative;
   }
-  .about-cta-title em { color: var(--gold-light); font-style: italic; }
+  .about-cta-title em { color: var(--primary); font-style: italic; }
   .about-thankyou {
     max-width: 600px; margin: 0 auto 48px; position: relative;
   }
@@ -1288,7 +1446,18 @@
   .about-nav-anchors { display: none !important; }
   /* Testimonies */
   .testimonies-header { padding: 0 24px 40px !important; }
-  .testimony-card { flex: 0 0 280px !important; padding: 28px 20px !important; }
+  .testimonies-track-wrap::before,
+  .testimonies-track-wrap::after { width: 32px !important; }
+  .testimonies-track { gap: 16px !important; }
+  .testimony-card { flex: 0 0 calc(100vw - 80px) !important; padding: 28px 20px !important; }
+
+  /* Modal */
+  .modal-overlay { padding: 12px !important; }
+  .modal-card { padding: 36px 22px !important; }
+  .modal-title { font-size: 24px !important; margin-bottom: 24px !important; }
+  .modal-form { gap: 16px !important; }
+  .modal-field input,
+  .modal-field textarea { padding: 12px 14px !important; font-size: 16px !important; }
   .about-values { padding: 60px 24px !important; }
   .values-grid { grid-template-columns: 1fr 1fr !important; gap: 2px !important; }
   .value-card { padding: 36px 16px !important; }
