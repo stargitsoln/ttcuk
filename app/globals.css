@@ -1454,7 +1454,7 @@
   .testimonies-header { padding: 0 24px 40px !important; }
   .testimonies-track-wrap::before,
   .testimonies-track-wrap::after { width: 20px !important; }
-  .testimonies-track { gap: 12px !important; }
+  .testimonies-track { gap: 12px !important; animation-duration: 80s !important; }
   .testimony-card { flex: 0 0 280px !important; padding: 28px 20px !important; }
 
   /* Modal */
