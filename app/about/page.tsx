@@ -10,21 +10,25 @@ const values = [
     letter: "L",
     title: "Leadership Development",
     verse: "Titus 1:5-9 (MSG)",
+    quote: "God calls leaders to be blameless, self-controlled, hospitable and devoted — people of sound character who uphold the truth and shepherd others with integrity.",
   },
   {
     letter: "I",
     title: "Inspiring Worship",
     verse: "John 4:23-24 (AMP)",
+    quote: "God is Spirit, and the Father seeks those who will worship Him authentically — in spirit and in truth, from the depths of the heart.",
   },
   {
     letter: "F",
     title: "Family Well-being",
     verse: "Psalm 133:1 (MSG)",
+    quote: "How good and beautiful it is when God's people dwell together in unity — a family bound by love, grace and shared purpose.",
   },
   {
     letter: "E",
     title: "Excellent Service",
     verse: "Colossians 3:17 (NKJV)",
+    quote: "Whatever we do in word or deed, we do it in the name of the Lord Jesus — serving with excellence and giving thanks to God.",
   },
 ];
 
@@ -162,9 +166,15 @@ export default function AboutPage() {
             {values.map((v, i) => (
               <Reveal key={v.letter} delay={i * 0.1}>
                 <div className="value-card">
-                  <span className="value-letter">{v.letter}</span>
-                  <h3 className="value-title">{v.title}</h3>
-                  <span className="value-verse">{v.verse}</span>
+                  <div className="value-card-front">
+                    <span className="value-letter">{v.letter}</span>
+                    <h3 className="value-title">{v.title}</h3>
+                    <span className="value-verse">{v.verse}</span>
+                  </div>
+                  <div className="value-card-back">
+                    <p className="value-quote">{v.quote}</p>
+                    <span className="value-quote-ref">{v.verse}</span>
+                  </div>
                 </div>
               </Reveal>
             ))}
