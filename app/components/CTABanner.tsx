@@ -68,7 +68,7 @@ export default function CTABanner() {
                 {"modal" in a ? (
                   <button
                     className="action-btn"
-                    onClick={() => setOpenModal(a.modal)}
+                    onClick={() => setOpenModal((a as { modal: ModalType }).modal)}
                   >
                     {a.cta}
                   </button>
