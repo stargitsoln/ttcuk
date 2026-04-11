@@ -1197,13 +1197,15 @@
 
   /* ─── TESTIMONIES ─── */
   .testimonies-section {
-    padding: 100px 0; background: var(--dark); overflow: hidden;
+    padding: 100px 0; background: var(--dark);
   }
   .testimonies-header {
     padding: 0 64px 64px; text-align: center;
   }
   .testimonies-track-wrap {
     overflow: hidden; position: relative;
+    /* Force a stacking context so mobile browsers composite correctly */
+    transform: translateZ(0);
   }
   .testimonies-track-wrap::before,
   .testimonies-track-wrap::after {
@@ -1220,8 +1222,12 @@
   }
   .testimonies-track {
     display: flex; gap: 24px;
-    animation: strip-scroll 48s linear infinite;
     width: max-content;
+    animation: strip-scroll 48s linear infinite;
+    /* GPU compositing — prevents disappearing on mobile */
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
   .testimonies-track:hover { animation-play-state: paused; }
   .testimony-card {
@@ -1447,9 +1453,9 @@
   /* Testimonies */
   .testimonies-header { padding: 0 24px 40px !important; }
   .testimonies-track-wrap::before,
-  .testimonies-track-wrap::after { width: 32px !important; }
-  .testimonies-track { gap: 16px !important; }
-  .testimony-card { flex: 0 0 calc(100vw - 80px) !important; padding: 28px 20px !important; }
+  .testimonies-track-wrap::after { width: 20px !important; }
+  .testimonies-track { gap: 12px !important; }
+  .testimony-card { flex: 0 0 280px !important; padding: 28px 20px !important; }
 
   /* Modal */
   .modal-overlay { padding: 12px !important; }
