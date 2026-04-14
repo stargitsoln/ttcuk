@@ -82,7 +82,6 @@ export default function FormModal({ type, onClose }: Props) {
 
         {status === "done" ? (
           <div className="modal-success">
-            <div className="modal-success-icon">✦</div>
             <h2 className="modal-title">{c.successTitle}</h2>
             <p className="modal-success-text">{c.successText}</p>
             <button className="btn-primary" style={{ marginTop: 24 }} onClick={onClose}>
