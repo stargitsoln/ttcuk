@@ -21,7 +21,7 @@ const actions = [
     title: "Become a Member",
     text: "Be part of a loving, faith-filled community. There's a place here for you.",
     cta: "Get In Touch →",
-    href: "/contact",
+    modal: "member" as const,
   },
   {
     title: "Watch Sermons",
@@ -32,7 +32,7 @@ const actions = [
   },
 ];
 
-type ModalType = "testimony" | "prayer" | null;
+type ModalType = "testimony" | "prayer" | "member" | null;
 
 export default function CTABanner() {
   const [openModal, setOpenModal] = useState<ModalType>(null);
