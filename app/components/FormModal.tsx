@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-type ModalType = "testimony" | "prayer";
+type ModalType = "testimony" | "prayer" | "member";
 
 interface Props {
   type: ModalType;
@@ -26,6 +26,15 @@ const config = {
     to: "prayer@thetransformingchurchuk.org",
     successTitle: "We're Praying",
     successText: "Your request has been received. Our prayer team will stand with you in faith.",
+  },
+  member: {
+    label: "Become a Member",
+    title: "Join Our Community",
+    question: "Do you have any questions?",
+    placeholder: "Tell us a bit about yourself or ask any questions...",
+    to: "hello@ttcuk.church",
+    successTitle: "Welcome!",
+    successText: "Thank you for your interest! We'll be in touch with you shortly.",
   },
 };
 

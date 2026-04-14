@@ -6,6 +6,32 @@ import Footer from "../components/Footer";
 
 export default function ContactPage() {
   const [agreed, setAgreed] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "contact", name, email, message, to: "info@thetransformingchurchuk.org" }),
+      });
+      if (res.ok) {
+        setStatus("done");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
 
   return (
     <>
@@ -40,10 +66,7 @@ export default function ContactPage() {
           <Reveal className="contact-form-col">
             <form
               className="contact-form"
-              onSubmit={(e) => {
-                e.preventDefault();
-                /* TODO: hook up form submission */
-              }}
+              onSubmit={handleSubmit}
             >
               <div className="form-group">
                 <label htmlFor="name">Name *</label>
@@ -69,8 +92,19 @@ export default function ContactPage() {
                 <span>Sign up for our email list for updates.</span>
               </label>
 
-              <button type="submit" className="btn-primary" style={{ marginTop: 8, width: "100%" }}>
-                Send
+              {status === "error" && (
+                <p style={{ color: "#e55", fontSize: 13, marginTop: 8 }}>
+                  Something went wrong. Please try again.
+                </p>
+              )}
+              {status === "done" && (
+                <p style={{ color: "#2ea043", fontSize: 13, marginTop: 8 }}>
+                  Thanks! We've received your message.
+                </p>
+              )}
+
+              <button type="submit" className="btn-primary" style={{ marginTop: 8, width: "100%" }} disabled={status === "sending"}>
+                {status === "sending" ? "Sending..." : "Send"}
               </button>
             </form>
           </Reveal>
