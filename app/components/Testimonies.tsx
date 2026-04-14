@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 
 const testimonies = [
   {
@@ -54,6 +55,8 @@ const testimonies = [
 ];
 
 export default function Testimonies() {
+  const [isPaused, setIsPaused] = useState(false);
+
   return (
     <section className="testimonies-section">
       <div className="testimonies-header">
@@ -65,7 +68,10 @@ export default function Testimonies() {
         </h2>
       </div>
       <div className="testimonies-track-wrap">
-        <div className="testimonies-track">
+        <div 
+          className={`testimonies-track ${isPaused ? 'mobile-paused' : ''}`}
+          onClick={() => setIsPaused(!isPaused)}
+        >
           {[...testimonies, ...testimonies].map((t, i) => (
             <div key={i} className="testimony-card">
               <span className="testimony-category">{t.category}</span>

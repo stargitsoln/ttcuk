@@ -1229,7 +1229,8 @@
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
   }
-  .testimonies-track:hover { animation-play-state: paused; }
+  .testimonies-track:hover,
+  .testimonies-track.mobile-paused { animation-play-state: paused !important; }
   .testimony-card {
     flex: 0 0 360px; padding: 40px 32px;
     background: rgba(255,255,255,0.02);
