@@ -5,19 +5,27 @@ const meetings = [
     time: "Wednesday · 8PM GMT",
     name: "Water Brook",
     desc: "Bible Study — Online via Zoom",
-    link: "https://bit.ly/joinTTCUK",
+    links: [
+      { label: "Join Zoom →", href: "https://bit.ly/joinTTCUK", variant: "zoom" },
+    ],
   },
   {
-    time: "Daily · 9PM GMT",
+    time: "Daily · 9PM – 9:30PM GMT",
     name: "Prayer Surge",
-    desc: "Prayer Meeting — Online via Zoom",
-    link: "https://www.youtube.com/ttcukonline",
+    desc: "Prayer Meeting — Online via Zoom and YouTube @TTCUKOnline",
+    links: [
+      { label: "Join Zoom →", href: "https://bit.ly/joinTTCUK", variant: "zoom" },
+      { label: "YouTube →", href: "https://www.youtube.com/@TTCUKOnline", variant: "yt" },
+    ],
   },
   {
-    time: "Last Friday · 11PM GMT",
-    name: "Mega Prayer Surge",
-    desc: "Monthly Intercession — Online via Zoom",
-    link: "https://www.youtube.com/ttcukonline",
+    time: "Last Friday · 11PM – 1AM GMT",
+    name: "MEGA Prayer Surge",
+    desc: "Monthly Intercession — Online via Zoom and YouTube @TTCUKOnline",
+    links: [
+      { label: "Join Zoom →", href: "https://bit.ly/joinTTCUK", variant: "zoom" },
+      { label: "YouTube →", href: "https://www.youtube.com/@TTCUKOnline", variant: "yt" },
+    ],
   },
 ];
 
@@ -35,14 +43,19 @@ export default function OnlineMeetings() {
               <span className="meeting-time">{m.time}</span>
               <div className="meeting-name">{m.name}</div>
               <p className="meeting-desc">{m.desc}</p>
-              <a
-                href={m.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="meeting-link"
-              >
-                Join →
-              </a>
+              <div className="meeting-links">
+                {m.links.map((l) => (
+                  <a
+                    key={l.label}
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`meeting-link meeting-link--${l.variant}`}
+                  >
+                    {l.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </Reveal>
         ))}

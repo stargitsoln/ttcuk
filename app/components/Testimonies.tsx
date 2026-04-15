@@ -1,49 +1,62 @@
 "use client";
+import { useState } from "react";
 
 const testimonies = [
   {
-    name: "Grace O.",
-    category: "Healing",
-    text: "I was diagnosed with stage 3 breast cancer. Doctors gave me little hope. My church family prayed, and six months later my scans came back completely clear. My oncologist called it medically unexplainable.",
+    name: "Peace O.",
+    category: "Academic",
+    text: "After receiving prophetic declarations, I held onto them through faith and diligence. God transformed my understanding of my Master's program, granting me favour to graduate with a distinction!",
   },
   {
-    name: "Michael T.",
-    category: "Career",
-    text: "After 18 months without work, I was on the verge of losing my home. I joined the prayer meetings at TTCUK and within three weeks received a job offer I hadn't even applied for. God truly provides.",
+    name: "Theo M.",
+    category: "Breakthrough",
+    text: "I thank God for helping me pass six professional exams and earn three post-grad certificates while working full-time. I also had a successful major operation. The 9pm prayers truly strengthened me!",
   },
   {
-    name: "Blessing A.",
+    name: "Amanda M.",
     category: "Miracle",
-    text: "My visa had been refused three times. On the fourth application — after a full night of prayer here at TTCUK — I was approved the very next morning. I still cannot explain it. Only God.",
+    text: "My husband and two children finally received the good news that their visas are ready after five months of waiting! I am overjoyed that my family will soon join me. Glory to God for answered prayers.",
   },
   {
-    name: "David C.",
-    category: "Promotion",
-    text: "I joined my company as an intern with no degree. Eight months after connecting with this church, I was promoted to team lead. My manager said she had never moved anyone that fast in her career.",
-  },
-  {
-    name: "Pastor Emmanuel F.",
-    category: "Protection",
-    text: "My son was in a vehicle completely destroyed in a motorway collision. Every other passenger was hospitalised. My son walked away without a single scratch. The hand of God was upon him.",
-  },
-  {
-    name: "Ruth N.",
+    name: "Mercy A.",
     category: "Healing",
-    text: "Doctors told me I needed urgent spinal surgery. A deacon from TTCUK prayed over me on Sunday. By Thursday my MRI showed nothing wrong. The surgeon himself had no medical explanation.",
+    text: "I'm overflowing with gratitude! Initial diagnosis of heart failure was miraculously turned into a completely normal echocardiogram. The 9pm prayers kept me standing in faith for this breakthrough.",
   },
   {
-    name: "James K.",
+    name: "Deborah L.",
+    category: "Deliverance",
+    text: "I thank God for delivering me from years of fear and emotional struggle after leaving my former church. Through fasting and powerful encounters, God brought deep healing and restored my life entirely!",
+  },
+  {
+    name: "Sissy O.",
+    category: "Peace",
+    text: "I thank God for His peace, which sustained me when a major business event didn't go as planned. Even in disappointment, God's peace kept my heart completely calm and allowed me to comfort others.",
+  },
+  {
+    name: "Mercy C.",
     category: "Restoration",
-    text: "My business was £40,000 in debt and days from closing. After fasting and prayer with the church, three major contracts came in within a week. Today I am debt-free and employing five people.",
+    text: "God granted us favour on multiple long-standing applications and resolved an issue I’d faced since 2022, beginning my restoration after significant losses. I give all glory to Him for His preservation!",
   },
   {
-    name: "Faith P.",
-    category: "Protection",
-    text: "My car was hit by a lorry at speed. Paramedics could not believe I was conscious and completely uninjured. I know with everything in me it was the prayers of this church that covered me that day.",
+    name: "Sweet M.",
+    category: "Provision",
+    text: "I opened a bank letter without fear. To my absolute amazement, an old £10,000 credit card debt was completely cancelled with no repayments required. Only God could have wiped it away so fully!",
+  },
+  {
+    name: "Lovette M.",
+    category: "Healing",
+    text: "I experienced intense pain following major surgery, unable to sleep properly. During the morning prayer session, as healing declarations were made, I felt Jesus touch my body and the pain instantly disappeared!",
+  },
+  {
+    name: "Jackie C.",
+    category: "Provision",
+    text: "I believed God for a financial miracle to sow my First Fruit Offering. Holding onto the prophetic word of 'pleasant surprises', my expected payment was deposited days early—a divine surprise from God!",
   },
 ];
 
 export default function Testimonies() {
+  const [isPaused, setIsPaused] = useState(false);
+
   return (
     <section className="testimonies-section">
       <div className="testimonies-header">
@@ -55,7 +68,10 @@ export default function Testimonies() {
         </h2>
       </div>
       <div className="testimonies-track-wrap">
-        <div className="testimonies-track">
+        <div 
+          className={`testimonies-track ${isPaused ? 'mobile-paused' : ''}`}
+          onClick={() => setIsPaused(!isPaused)}
+        >
           {[...testimonies, ...testimonies].map((t, i) => (
             <div key={i} className="testimony-card">
               <span className="testimony-category">{t.category}</span>

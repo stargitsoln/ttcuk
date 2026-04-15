@@ -16,8 +16,7 @@ export default function Footer() {
         {/* Centre column: info + socials */}
         <div className="footer-center">
           <div className="footer-info">
-            The Transforming Church is a Registered Charity No. 1194579<br />
-            Family-Friendly · All Welcome
+            The Transforming Church UK. Registered Charity in England and Wales No 1194579
           </div>
           <div className="footer-socials">
             <a href="https://www.facebook.com/TTCUKOnline" target="_blank" rel="noopener noreferrer" aria-label="Facebook">

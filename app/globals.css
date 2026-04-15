@@ -555,18 +555,34 @@
     font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 300;
     line-height: 1.75; flex: 1;
   }
+  .meeting-links {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-top: 28px;
+  }
   .meeting-link {
     display: inline-flex; align-items: center; gap: 6px;
-    margin-top: 28px; align-self: flex-start;
+    align-self: flex-start;
     font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-    color: var(--primary); text-decoration: none;
+    text-decoration: none;
     border: 1px solid rgba(0,140,187,0.4);
     padding: 9px 18px;
     transition: background 0.3s, color 0.3s, border-color 0.3s, letter-spacing 0.3s;
   }
-  .meeting-link:hover {
+  .meeting-link--zoom {
+    color: var(--primary);
+    border-color: rgba(0,140,187,0.4);
+  }
+  .meeting-link--zoom:hover {
     background: var(--primary); color: var(--white);
     border-color: var(--primary); letter-spacing: 4px;
+  }
+  .meeting-link--yt {
+    color: var(--gold);
+    border-color: rgba(250,168,49,0.4);
+  }
+  .meeting-link--yt:hover {
+    background: var(--gold); color: var(--dark);
+    border-color: var(--gold); letter-spacing: 4px;
   }
 
   /* ─── MISSION STATEMENT ─── */
@@ -1229,7 +1245,8 @@
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
   }
-  .testimonies-track:hover { animation-play-state: paused; }
+  .testimonies-track:hover,
+  .testimonies-track.mobile-paused { animation-play-state: paused !important; }
   .testimony-card {
     flex: 0 0 360px; padding: 40px 32px;
     background: rgba(255,255,255,0.02);
