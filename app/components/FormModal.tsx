@@ -43,6 +43,7 @@ export default function FormModal({ type, onClose }: Props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
 
   useEffect(() => {
@@ -58,6 +59,7 @@ export default function FormModal({ type, onClose }: Props) {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (honeypot) { setStatus("done"); return; }
     setStatus("sending");
     try {
       const res = await fetch("/api/contact", {
@@ -120,6 +122,17 @@ export default function FormModal({ type, onClose }: Props) {
                   placeholder={c.placeholder}
                 />
               </div>
+
+              {/* Honeypot — hidden from real users, bots fill it */}
+              <input
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                style={{ position: "absolute", opacity: 0, top: -9999, left: -9999, height: 0, width: 0 }}
+              />
 
               {status === "error" && (
                 <p style={{ color: "#e55", fontSize: 13, margin: 0 }}>

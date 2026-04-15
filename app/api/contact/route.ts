@@ -16,7 +16,12 @@ export async function POST(req: NextRequest) {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY || "missing-api-key");
     const body = await req.json();
-    const { type, name, email, message, to } = body;
+    const { type, name, email, message, to, website } = body;
+
+    // Honeypot — bots fill this, humans don't
+    if (website) {
+      return NextResponse.json({ ok: true });
+    }
 
     if (!name || !email || !message || !to) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });

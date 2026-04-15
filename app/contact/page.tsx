@@ -15,12 +15,15 @@ export default function ContactPage() {
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
     const message = formData.get("message") as string;
+    const honeypot = formData.get("website") as string;
+
+    if (honeypot) { setStatus("done"); return; }
 
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "contact", name, email, message, to: "info@thetransformingchurchuk.org" }),
+        body: JSON.stringify({ type: "contact", name, email, message, to: "hello@ttcuk.church" }),
       });
       if (res.ok) {
         setStatus("done");
@@ -83,6 +86,16 @@ export default function ContactPage() {
                 <textarea id="message" name="message" required rows={5} placeholder="Tell us how you'd like to get involved..." />
               </div>
 
+              {/* Honeypot — hidden from real users, bots fill it */}
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: "absolute", opacity: 0, top: -9999, left: -9999, height: 0, width: 0 }}
+              />
+
               <label className="checkbox-label">
                 <input
                   type="checkbox"
@@ -123,8 +136,8 @@ export default function ContactPage() {
 
               <div className="contact-details">
                 <p className="contact-detail-name">The Transforming Church UK</p>
-                <a href="mailto:info@thetransformingchurchuk.org" className="contact-detail-link">
-                  info@thetransformingchurchuk.org
+                <a href="mailto:hello@ttcuk.church" className="contact-detail-link">
+                  hello@ttcuk.church
                 </a>
                 <a href="tel:+447842671760" className="contact-detail-link">
                   07842 671 760
