@@ -163,6 +163,7 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
+
             </div>
           </Reveal>
         </div>
