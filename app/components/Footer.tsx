@@ -35,6 +35,22 @@ export default function Footer() {
         </div>
 
         <div className="footer-contact">
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", marginBottom: 12, fontSize: 12, color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
+            <div>
+              <p style={{ color: "rgba(255,255,255,0.6)", fontWeight: 500, marginBottom: 2 }}>Barnet Campus</p>
+              <address style={{ fontStyle: "normal" }}>
+                Ark Pioneer Academy, Westcombe Drive<br />
+                Barnet, EN5 2BE
+              </address>
+            </div>
+            <div>
+              <p style={{ color: "rgba(255,255,255,0.6)", fontWeight: 500, marginBottom: 2 }}>Stratford Campus</p>
+              <address style={{ fontStyle: "normal" }}>
+                The Dome, University of East London<br />
+                Water Lane, E15 4LZ
+              </address>
+            </div>
+          </div>
           <a href="tel:+447842671760">+44 7842 671760</a><br />
           <a
             href="https://pay.sumup.com/b2c/QCDJNNFJ"
