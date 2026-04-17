@@ -1522,6 +1522,19 @@
   .chatbot-input-bar {
     padding-bottom: max(12px, env(safe-area-inset-bottom)) !important;
   }
+
+  /* Give page */
+  .give-hero { padding: 48px 24px 32px !important; }
+  .give-container { grid-template-columns: 1fr !important; padding: 0 20px 60px !important; gap: 32px !important; max-width: 100% !important; }
+  .give-left { min-width: 0 !important; }
+  .give-right { position: static !important; top: auto !important; min-width: 0 !important; }
+  .give-amount-input-wrap { max-width: 100% !important; }
+  .give-amount-input { min-width: 0 !important; font-size: clamp(28px, 8vw, 48px) !important; }
+  .give-field-row { grid-template-columns: 1fr !important; }
+  .give-checkout-wrap { padding: 20px !important; }
+  .give-scripture { padding: 40px 24px 60px !important; max-width: 100% !important; }
+  .give-thankyou-section { padding: 60px 24px 40px !important; }
+  .give-proceed-btn { padding: 18px 24px !important; }
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -1798,19 +1811,5 @@
     margin-top: 16px;
   }
 
-  /* ── Responsive ── */
-  @media (max-width: 768px) {
-    .give-container {
-      grid-template-columns: 1fr;
-      padding: 0 24px 60px;
-      gap: 32px;
-    }
-    .give-right { position: static; }
-    .give-hero { padding: 48px 24px 32px; }
-    .give-field-row { grid-template-columns: 1fr; }
-    .give-checkout-wrap { padding: 24px; }
-    .give-scripture { padding: 40px 24px 60px; }
-    .give-thankyou-section { padding: 60px 24px 40px; }
-  }
 }
 
