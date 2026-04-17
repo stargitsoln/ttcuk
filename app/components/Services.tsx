@@ -20,6 +20,7 @@ export default function Services() {
             src="/images/pst-gene.jpg"
             alt="Sunday service at The Transforming Church UK"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             style={{ objectFit: "cover", objectPosition: "center" }}
           />
           <div className="service-image-overlay" />

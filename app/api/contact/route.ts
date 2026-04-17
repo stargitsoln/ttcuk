@@ -12,11 +12,24 @@ const DISCLAIMER_HTML = `
   </p>
 `;
 
+function escapeHTML(str: string) {
+  if (!str) return "";
+  return str.replace(/[&<>'"]/g, 
+    tag => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;'
+    }[tag] || tag)
+  );
+}
+
 export async function POST(req: NextRequest) {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY || "missing-api-key");
     const body = await req.json();
-    const { type, name, email, message, to, website } = body;
+    let { type, name, email, message, to, website } = body;
 
     // Honeypot — bots fill this, humans don't
     if (website) {
@@ -26,6 +39,11 @@ export async function POST(req: NextRequest) {
     if (!name || !email || !message || !to) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
+
+    // Sanitize inputs to prevent XSS
+    name = escapeHTML(name);
+    email = escapeHTML(email);
+    message = escapeHTML(message);
 
     // 1. Save to Supabase (Permanent Storage)
     const { error: dbError } = await supabaseAdmin.from("submissions").insert({
