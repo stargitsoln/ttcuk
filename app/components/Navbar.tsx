@@ -47,12 +47,7 @@ export default function Navbar() {
         <span />
       </button>
 
-      <a
-        href="https://pay.sumup.com/b2c/QCDJNNFJ"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="nav-give"
-      >
+      <a href="/give" className="nav-give">
         Give →
       </a>
 
@@ -63,9 +58,7 @@ export default function Navbar() {
           </a>
         ))}
         <a
-          href="https://pay.sumup.com/b2c/QCDJNNFJ"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/give"
           className="nav-give"
           style={{ textAlign: "center", marginTop: 8 }}
         >

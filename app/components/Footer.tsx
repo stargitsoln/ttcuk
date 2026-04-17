@@ -52,14 +52,12 @@ export default function Footer() {
             </div>
           </div>
           <a href="tel:+447842671760">+44 7842 671760</a><br />
-          <a
-            href="https://pay.sumup.com/b2c/QCDJNNFJ"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/give"
             style={{ color: "rgba(255,255,255,0.3)" }}
           >
             Give Online
-          </a>
+          </Link>
         </div>
       </div>
 

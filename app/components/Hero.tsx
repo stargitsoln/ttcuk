@@ -92,9 +92,7 @@ export default function Hero() {
           Join Us Live
         </a>
         <a
-          href="https://pay.sumup.com/b2c/QCDJNNFJ"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/give"
           className="btn-outline"
         >
           Give Today
