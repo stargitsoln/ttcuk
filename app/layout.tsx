@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | The Transforming Church UK",
   },
   description:
-    "A spirit-filled, multi-campus church in Barnet & Stratford, London. Join us every Sunday 11AM–1PM. All are welcome.",
+    "A Kingdom-values church with campuses in Barnet & Stratford, London. We exist to lead people into a life-transforming relationship with Jesus Christ.",
   keywords: [
     "church in Barnet",
     "church in Stratford London",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Transforming Church UK",
     description:
-      "A spirit-filled, multi-campus church in Barnet & Stratford, London. Join us every Sunday 11AM–1PM.",
+      "A Kingdom-values church with campuses in Barnet & Stratford, London. We exist to lead people into a life-transforming relationship with Jesus Christ.",
     url: SITE_URL,
     siteName: "The Transforming Church UK",
     images: [
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Transforming Church UK",
     description:
-      "A spirit-filled, multi-campus church in Barnet & Stratford, London. Join us every Sunday 11AM–1PM.",
+      "A Kingdom-values church with campuses in Barnet & Stratford, London. We exist to lead people into a life-transforming relationship with Jesus Christ.",
     images: ["/images/og-image.jpg"],
   },
   icons: {
@@ -85,7 +85,7 @@ const jsonLd = {
   telephone: "+447842671760",
   email: "hello@ttcuk.church",
   description:
-    "A spirit-filled, multi-campus church in London committed to discipleship, fellowship and mission.",
+    "A Kingdom-values church with campuses in Barnet & Stratford, London. We exist to lead people into a life-transforming relationship with Jesus Christ.",
   sameAs: [
     "https://www.facebook.com/TTCUKOnline",
     "https://www.instagram.com/TTCUKOnline",
