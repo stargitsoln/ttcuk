@@ -6,7 +6,7 @@ const meetings = [
     name: "Water Brook",
     desc: "Bible Study — Online via Zoom",
     links: [
-      { label: "Join Zoom →", href: "https://bit.ly/joinTTCUK", variant: "zoom" },
+      { label: "Join Zoom →", href: "https://zoom.us/j/3947895656?pwd=NzNVQytZQXpFV0JSMGV4YUo4ZzNtZz09", variant: "zoom" },
     ],
   },
   {
@@ -14,7 +14,7 @@ const meetings = [
     name: "Prayer Surge",
     desc: "Prayer Meeting — Online via Zoom and YouTube @TTCUKOnline",
     links: [
-      { label: "Join Zoom →", href: "https://bit.ly/joinTTCUK", variant: "zoom" },
+      { label: "Join Zoom →", href: "https://zoom.us/j/3947895656?pwd=NzNVQytZQXpFV0JSMGV4YUo4ZzNtZz09", variant: "zoom" },
       { label: "YouTube →", href: "https://www.youtube.com/@TTCUKOnline", variant: "yt" },
     ],
   },
@@ -23,7 +23,7 @@ const meetings = [
     name: "MEGA Prayer Surge",
     desc: "Monthly Intercession — Online via Zoom and YouTube @TTCUKOnline",
     links: [
-      { label: "Join Zoom →", href: "https://bit.ly/joinTTCUK", variant: "zoom" },
+      { label: "Join Zoom →", href: "https://zoom.us/j/3947895656?pwd=NzNVQytZQXpFV0JSMGV4YUo4ZzNtZz09", variant: "zoom" },
       { label: "YouTube →", href: "https://www.youtube.com/@TTCUKOnline", variant: "yt" },
     ],
   },
