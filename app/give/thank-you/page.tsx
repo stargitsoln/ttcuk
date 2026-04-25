@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Thank You for Giving",
   description:
     "Thank you for your generous gift to The Transforming Church UK. Your giving makes a difference.",
+  robots: { index: false, follow: false },
 };
 
 export default function ThankYouPage() {

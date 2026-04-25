@@ -7,18 +7,31 @@ export default function BgVideo({ src, className }: { src: string; className?: s
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
-    video.play().catch(() => {});
-  }, []);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.src = src;
+          video.load();
+          video.play().catch(() => {});
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, [src]);
 
   return (
     <video
       ref={ref}
       className={className}
-      autoPlay
       loop
       muted
       playsInline
-      preload="auto"
+      preload="none"
     >
       <source src={src} type="video/mp4" />
     </video>

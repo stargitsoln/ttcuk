@@ -279,9 +279,9 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="about-cta-btns">
-              <a href="mailto:info@thetransformingchurchuk.org" className="btn-primary">
+              <Link href="/contact" className="btn-primary">
                 Get In Touch
-              </a>
+              </Link>
               <Link href="/" className="btn-outline">
                 Back Home
               </Link>

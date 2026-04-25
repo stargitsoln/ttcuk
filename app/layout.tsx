@@ -126,6 +126,81 @@ const jsonLd = {
   },
 };
 
+const eventsJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: "Water Brook Bible Study",
+    description: "Weekly online Bible Study hosted by The Transforming Church UK via Zoom.",
+    organizer: { "@type": "Church", name: "The Transforming Church UK", url: SITE_URL },
+    eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    location: {
+      "@type": "VirtualLocation",
+      url: "https://zoom.us/j/3947895656?pwd=NzNVQytZQXpFV0JSMGV4YUo4ZzNtZz09",
+    },
+    eventSchedule: {
+      "@type": "Schedule",
+      byDay: "https://schema.org/Wednesday",
+      startTime: "20:00",
+      endTime: "21:30",
+      repeatFrequency: "P1W",
+      scheduleTimezone: "Europe/London",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: "Prayer Surge",
+    description: "Daily online prayer meeting (9PM–9:30PM GMT) via Zoom and YouTube @TTCUKOnline.",
+    organizer: { "@type": "Church", name: "The Transforming Church UK", url: SITE_URL },
+    eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    location: {
+      "@type": "VirtualLocation",
+      url: "https://zoom.us/j/3947895656?pwd=NzNVQytZQXpFV0JSMGV4YUo4ZzNtZz09",
+    },
+    eventSchedule: {
+      "@type": "Schedule",
+      byDay: [
+        "https://schema.org/Monday",
+        "https://schema.org/Tuesday",
+        "https://schema.org/Wednesday",
+        "https://schema.org/Thursday",
+        "https://schema.org/Friday",
+        "https://schema.org/Saturday",
+        "https://schema.org/Sunday",
+      ],
+      startTime: "21:00",
+      endTime: "21:30",
+      repeatFrequency: "P1D",
+      scheduleTimezone: "Europe/London",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: "MEGA Prayer Surge",
+    description: "Monthly all-night intercession (11PM–1AM GMT) via Zoom and YouTube @TTCUKOnline. Held on the last Friday of each month.",
+    organizer: { "@type": "Church", name: "The Transforming Church UK", url: SITE_URL },
+    eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    location: {
+      "@type": "VirtualLocation",
+      url: "https://zoom.us/j/3947895656?pwd=NzNVQytZQXpFV0JSMGV4YUo4ZzNtZz09",
+    },
+    eventSchedule: {
+      "@type": "Schedule",
+      byDay: "https://schema.org/Friday",
+      byMonthWeek: -1,
+      startTime: "23:00",
+      endTime: "01:00",
+      repeatFrequency: "P1M",
+      scheduleTimezone: "Europe/London",
+    },
+  },
+];
+
 import CookieConsent from "./components/CookieConsent";
 
 export default function RootLayout({
@@ -140,6 +215,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {eventsJsonLd.map((event) => (
+          <script
+            key={event.name}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(event) }}
+          />
+        ))}
       </head>
       <body style={{ fontFamily: "var(--font-body), sans-serif" }}>
         {children}
