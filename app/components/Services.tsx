@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "./Reveal";
 
 export default function Services() {
@@ -9,7 +10,7 @@ export default function Services() {
           Gather With Us
         </span>
         <h2 className="section-title" style={{ textAlign: "center" }}>
-          Every Sunday
+          Join Us Weekly
         </h2>
       </Reveal>
 
@@ -59,17 +60,30 @@ export default function Services() {
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", justifyContent: "center", marginBottom: 8 }}>
               <div style={{ flex: "1 1 200px" }}>
-                <p style={{ fontSize: 14, color: "var(--gold)", marginBottom: 4, fontWeight: 400 }}>Barnet Campus</p>
+                <Link href="/locations/barnet" style={{ fontSize: 14, color: "var(--gold)", marginBottom: 4, fontWeight: 400, display: "block", textDecoration: "none" }}>
+                  Barnet Campus <span style={{ color: "rgba(255,255,255,0.4)", fontWeight: 300 }}>— Sundays</span>
+                </Link>
                 <p style={{ fontSize: 13, color: "rgba(255,255,255,0.45)", fontWeight: 300 }}>
                   📍 Ark Pioneer Academy, Westcombe Drive<br />
                   Barnet, EN5 2BE — Free Parking
                 </p>
               </div>
               <div style={{ flex: "1 1 200px" }}>
-                <p style={{ fontSize: 14, color: "var(--gold)", marginBottom: 4, fontWeight: 400 }}>Stratford Campus</p>
+                <Link href="/locations/stratford" style={{ fontSize: 14, color: "var(--gold)", marginBottom: 4, fontWeight: 400, display: "block", textDecoration: "none" }}>
+                  Stratford Campus <span style={{ color: "rgba(255,255,255,0.4)", fontWeight: 300 }}>— Sundays</span>
+                </Link>
                 <p style={{ fontSize: 13, color: "rgba(255,255,255,0.45)", fontWeight: 300 }}>
                   📍 The Dome, University of East London, Water Ln<br />
                   London E15 4LZ
+                </p>
+              </div>
+              <div style={{ flex: "1 1 200px" }}>
+                <Link href="/locations/birmingham" style={{ fontSize: 14, color: "var(--gold)", marginBottom: 4, fontWeight: 400, display: "block", textDecoration: "none" }}>
+                  Birmingham Campus <span style={{ color: "rgba(255,255,255,0.4)", fontWeight: 300 }}>— Saturdays</span>
+                </Link>
+                <p style={{ fontSize: 13, color: "rgba(255,255,255,0.45)", fontWeight: 300 }}>
+                  📍 53 Wyrley Rd<br />
+                  Birmingham, B6 7BS
                 </p>
               </div>
             </div>

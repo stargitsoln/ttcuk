@@ -5,14 +5,14 @@ type Message = { role: "user" | "bot"; text: string };
 
 const KNOWLEDGE = [
   {
-    keywords: ["service", "sunday", "time", "when", "gather", "worship time"],
+    keywords: ["service", "sunday", "saturday", "time", "when", "gather", "worship time", "campus", "campuses", "birmingham"],
     answer:
-      "Our Sunday service is every week from 11AM to 1PM at Ark Pioneer Academy, Westcombe Drive, Barnet, EN5 2BE. Free parking is available and we are family-friendly — all are welcome!",
+      "We gather weekly at three campuses:\n\n• Barnet — Sundays, 11AM to 1PM\n• Stratford — Sundays, 11AM to 1PM\n• Birmingham — Saturdays, 11AM to 1PM\n\nFree parking is available at Barnet and we are family-friendly — all are welcome!",
   },
   {
     keywords: ["location", "address", "where", "directions", "parking", "venue"],
     answer:
-      "We meet at Ark Pioneer Academy, Westcombe Drive, Barnet, EN5 2BE. There is free parking on-site. We look forward to seeing you!",
+      "We meet at three locations:\n\n• Barnet: Ark Pioneer Academy, Westcombe Drive, Barnet, EN5 2BE\n• Stratford: The Dome, University of East London, Water Lane, E15 4LZ\n• Birmingham: 53 Wyrley Rd, Birmingham, B6 7BS\n\nWe look forward to seeing you!",
   },
   {
     keywords: ["online", "zoom", "virtual", "join from", "remote"],
