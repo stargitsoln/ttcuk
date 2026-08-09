@@ -5,12 +5,14 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="footer-inner">
         <div className="footer-logo">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/TTCUK-logo.gif"
-            alt="TTCUK"
-            style={{ height: 48, width: "auto", display: "block" }}
-          />
+          <Link href="/" aria-label="Back to homepage">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/TTCUK-logo.gif"
+              alt="TTCUK"
+              style={{ height: 48, width: "auto", display: "block" }}
+            />
+          </Link>
         </div>
 
         {/* Centre column: info + socials */}
@@ -35,19 +37,32 @@ export default function Footer() {
         </div>
 
         <div className="footer-contact">
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", marginBottom: 12, fontSize: 12, color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
+          <div className="footer-campuses">
             <div>
-              <p style={{ color: "rgba(255,255,255,0.6)", fontWeight: 500, marginBottom: 2 }}>Barnet Campus</p>
+              <Link href="/locations/barnet" className="footer-campus-name">
+                Barnet Campus
+              </Link>
               <address style={{ fontStyle: "normal" }}>
                 Ark Pioneer Academy, Westcombe Drive<br />
                 Barnet, EN5 2BE
               </address>
             </div>
             <div>
-              <p style={{ color: "rgba(255,255,255,0.6)", fontWeight: 500, marginBottom: 2 }}>Stratford Campus</p>
+              <Link href="/locations/stratford" className="footer-campus-name">
+                Stratford Campus
+              </Link>
               <address style={{ fontStyle: "normal" }}>
                 The Dome, University of East London<br />
                 Water Lane, E15 4LZ
+              </address>
+            </div>
+            <div>
+              <Link href="/locations/birmingham" className="footer-campus-name">
+                Birmingham Campus
+              </Link>
+              <address style={{ fontStyle: "normal" }}>
+                53 Wyrley Rd<br />
+                Birmingham, B6 7BS
               </address>
             </div>
           </div>
@@ -65,6 +80,14 @@ export default function Footer() {
         <div className="footer-copy">
           &copy; 2026 The Transforming Church UK &mdash; All Rights Reserved.
           <Link href="/privacy">Privacy Policy</Link>
+          <a
+            href="https://stargitsolutions.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-credit"
+          >
+            Site by Stargit Solutions LTD
+          </a>
         </div>
       </div>
     </footer>

@@ -9,14 +9,14 @@ import BgVideo from "../components/BgVideo";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about The Transforming Church UK — our L.I.F.E values, mission, and beliefs. A spirit-filled, multi-campus church serving Barnet (North London) and Stratford (East London).",
+    "Learn about The Transforming Church UK — our L.I.F.E values, mission, and beliefs. A spirit-filled, multi-campus church serving Barnet (North London), Stratford (East London), and Birmingham.",
   alternates: {
     canonical: "https://www.ttcuk.church/about",
   },
   openGraph: {
     title: "About Us | The Transforming Church UK",
     description:
-      "Learn about The Transforming Church UK — our L.I.F.E values, mission, and beliefs. A community church in Barnet and Stratford, London.",
+      "Learn about The Transforming Church UK — our L.I.F.E values, mission, and beliefs. A community church in Barnet and Stratford, London, and in Birmingham.",
     url: "https://www.ttcuk.church/about",
     type: "website",
   },

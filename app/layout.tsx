@@ -24,17 +24,20 @@ export const metadata: Metadata = {
     template: "%s | The Transforming Church UK",
   },
   description:
-    "A Kingdom-values church with campuses in Barnet & Stratford, London. We exist to lead people into a life-transforming relationship with Jesus Christ.",
+    "A Kingdom-values church with campuses in Barnet & Stratford, London, and Birmingham. We exist to lead people into a life-transforming relationship with Jesus Christ.",
   keywords: [
     "church in Barnet",
     "church in Stratford London",
+    "church in Birmingham",
     "churches in North London",
     "Sunday service Barnet",
+    "Saturday service Birmingham",
     "Christian church East London",
     "spirit filled church London",
     "charismatic church North London",
     "church near me Barnet EN5",
     "church E15",
+    "church B6 Birmingham",
     "TTCUK",
     "The Transforming Church UK",
   ],
@@ -44,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Transforming Church UK",
     description:
-      "A Kingdom-values church with campuses in Barnet & Stratford, London. We exist to lead people into a life-transforming relationship with Jesus Christ.",
+      "A Kingdom-values church with campuses in Barnet & Stratford, London, and Birmingham. We exist to lead people into a life-transforming relationship with Jesus Christ.",
     url: SITE_URL,
     siteName: "The Transforming Church UK",
     images: [
@@ -62,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Transforming Church UK",
     description:
-      "A Kingdom-values church with campuses in Barnet & Stratford, London. We exist to lead people into a life-transforming relationship with Jesus Christ.",
+      "A Kingdom-values church with campuses in Barnet & Stratford, London, and Birmingham. We exist to lead people into a life-transforming relationship with Jesus Christ.",
     images: ["/images/og-image.jpg"],
   },
   icons: {
@@ -74,7 +77,7 @@ export const metadata: Metadata = {
   },
 };
 
-/** JSON-LD structured data — Church + both campuses */
+/** JSON-LD structured data — Church + all campuses */
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Church",
@@ -85,7 +88,7 @@ const jsonLd = {
   telephone: "+447842671760",
   email: "hello@ttcuk.church",
   description:
-    "A Kingdom-values church with campuses in Barnet & Stratford, London. We exist to lead people into a life-transforming relationship with Jesus Christ.",
+    "A Kingdom-values church with campuses in Barnet & Stratford, London, and Birmingham. We exist to lead people into a life-transforming relationship with Jesus Christ.",
   sameAs: [
     "https://www.facebook.com/TTCUKOnline",
     "https://www.instagram.com/TTCUKOnline",
@@ -117,13 +120,33 @@ const jsonLd = {
         addressCountry: "GB",
       },
     },
+    {
+      "@type": "Place",
+      name: "Birmingham Campus",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "53 Wyrley Rd",
+        addressLocality: "Birmingham",
+        postalCode: "B6 7BS",
+        addressRegion: "West Midlands",
+        addressCountry: "GB",
+      },
+    },
   ],
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: "Sunday",
-    opens: "11:00",
-    closes: "13:00",
-  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Sunday",
+      opens: "11:00",
+      closes: "13:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "11:00",
+      closes: "13:00",
+    },
+  ],
 };
 
 const eventsJsonLd = [

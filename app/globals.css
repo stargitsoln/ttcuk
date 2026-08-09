@@ -888,6 +888,17 @@
     font-size: 12px; color: rgba(255,255,255,0.3); text-align: right;
   }
   .footer-contact a { color: var(--gold); text-decoration: none; }
+  .footer-campuses {
+    display: flex; flex-wrap: wrap; gap: 24px;
+    margin-bottom: 12px; font-size: 12px;
+    color: rgba(255,255,255,0.45); line-height: 1.8;
+  }
+  .footer-campus-name {
+    color: rgba(255,255,255,0.6); font-weight: 500;
+    margin-bottom: 2px; display: block; text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-campus-name:hover { color: var(--gold); }
 
   /* ─── FOOTER EXTRAS ─── */
   .footer-bottom {
@@ -905,6 +916,13 @@
     transition: color 0.3s; margin-left: 16px;
   }
   .footer-copy a:hover { color: var(--gold); }
+  /* Doubled class beats .footer-copy a so the credit stays subdued */
+  .footer-credit.footer-credit {
+    font-size: 10px; color: rgba(255,255,255,0.15);
+    margin-left: 16px; letter-spacing: 1px;
+    text-decoration: none; transition: color 0.3s;
+  }
+  .footer-credit.footer-credit:hover { color: rgba(255,255,255,0.4); }
   .footer-socials {
     display: flex; gap: 20px; align-items: center; justify-content: center;
   }
@@ -1032,6 +1050,13 @@
     display: flex; align-items: center;
   }
   .contact-social-icons a:hover { color: var(--gold); }
+
+  /* ─── LOCATION PAGES ─── */
+  .location-map {
+    position: relative; overflow: hidden; min-height: 320px;
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+  .location-map iframe { display: block; }
 
   /* ─── ABOUT PAGE ─── */
   .about-page {
@@ -1423,9 +1448,21 @@
   .section, .times-block, .beliefs-section,
   .quote-section, .action-section, .final-cta,
   .sermons-section { padding: 70px 28px !important; }
-  .site-footer { padding: 40px 28px !important; }
-  .footer-inner { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
-  .footer-contact { text-align: left !important; }
+  /* Extra bottom clearance so the fixed "Ask Me" chatbot pill (bottom: 16px,
+     ~48px tall) cannot occlude the copyright line at the end of scroll. */
+  .site-footer { padding: 40px 28px 110px !important; }
+  /* Column flex + flex-start sizes children to max-content, which pushes long
+     text past the viewport where overflow-x:hidden clips it. Stretch instead. */
+  .footer-inner { flex-direction: column !important; align-items: stretch !important; gap: 16px !important; }
+  .footer-contact { text-align: left !important; width: 100% !important; }
+  .footer-center { width: 100% !important; align-items: flex-start !important; }
+  .footer-info { text-align: left !important; }
+  .footer-socials { justify-content: flex-start !important; }
+  .footer-campuses {
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
   .hero { padding: 60px 20px !important; min-height: 85vh !important; }
   .service-layout { grid-template-columns: 1fr !important; }
   .service-image { min-height: 280px !important; }

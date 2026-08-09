@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { locations } from "@/lib/locations";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.ttcuk.church";
@@ -16,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    ...locations.map((l) => ({
+      url: `${base}/locations/${l.slug}`,
+      lastModified: new Date("2026-08-08"),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     {
       url: `${base}/contact`,
       lastModified: new Date("2026-04-25"),
